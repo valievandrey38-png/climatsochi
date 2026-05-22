@@ -55,7 +55,7 @@
 <style>
 :root{
   --gold:#C9A96E; --gold-light:#E8D5B0; --gold-dark:#9B7A3A;
-  --dark:#0D0B08; --dark-2:#1A1612; --dark-3:#2A2118;
+  --dark:#080d18; --dark-2:#0f1628; --dark-3:#1a2540;
   --cream:#F5F0EB; --cream-2:#EDE5D8;
   --text:#1A1612; --muted:#7A6E64; --white:#fff;
   --fh:'Cormorant Garamond',serif; --fb:'Inter',sans-serif;
@@ -216,16 +216,14 @@ nav a:hover{color:var(--gold);}
 .cross{color:rgba(255,255,255,0.18);}
 
 /* ── ПРОЦЕСС ── */
-.process{background:var(--cream-2);padding:100px 48px;}
-.process-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:60px;border:1px solid rgba(201,169,110,0.16);border-radius:14px;overflow:hidden;}
-.process-step{padding:36px 26px;border-right:1px solid rgba(201,169,110,0.12);transition:background 0.3s;}
-.process-step:last-child{border-right:none;}
-.process-step:hover{background:var(--dark);}
-.process-step:hover .step-title{color:var(--white);}
-.process-step:hover .step-desc{color:rgba(255,255,255,0.4);}
-.step-num{font-family:var(--fh);font-size:48px;font-weight:300;color:var(--gold);opacity:0.3;line-height:1;margin-bottom:16px;}
-.step-title{font-size:15px;font-weight:600;color:var(--text);margin-bottom:8px;transition:color 0.3s;}
-.step-desc{font-size:12px;color:var(--muted);line-height:1.6;transition:color 0.3s;}
+.process{background:var(--dark);padding:100px 48px;}
+.process-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:60px;}
+.process-step{padding:32px 24px;border-radius:14px;background:rgba(255,255,255,0.04);border:1px solid rgba(201,169,110,0.18);transition:background 0.3s,border-color 0.3s,transform 0.3s;}
+.process-step:hover{background:rgba(201,169,110,0.08);border-color:rgba(201,169,110,0.45);transform:translateY(-4px);}
+.step-num{font-family:var(--fh);font-size:52px;font-weight:300;color:var(--gold);opacity:1;line-height:1;margin-bottom:16px;text-shadow:0 0 24px rgba(201,169,110,0.4);}
+.step-title{font-size:15px;font-weight:600;color:var(--white);margin-bottom:8px;transition:color 0.3s;}
+.step-desc{font-size:12px;color:rgba(255,255,255,0.45);line-height:1.6;transition:color 0.3s;}
+.process-step:hover .step-desc{color:rgba(255,255,255,0.65);}
 
 /* ── ОТЗЫВЫ ── */
 .reviews{background:var(--cream);padding:100px 48px;}
@@ -368,7 +366,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
   .services-grid{grid-template-columns:repeat(2,1fr);}
   .calc-layout,.why-layout,.faq-layout,.contacts-layout{grid-template-columns:1fr;gap:40px;}
   .reviews-grid{grid-template-columns:1fr 1fr;}
-  .process-steps{grid-template-columns:1fr 1fr;}
+  .process-steps{grid-template-columns:1fr 1fr 1fr;}
   .districts-grid{grid-template-columns:repeat(3,1fr);}
   .footer-top{grid-template-columns:1fr 1fr;gap:32px;}
   .cta-banner{flex-direction:column;text-align:center;}
@@ -380,7 +378,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
   .hero-inner{padding:0 20px;}
   .hero-stats{display:none;}
   .services-grid{grid-template-columns:1fr;}
-  .process-steps{grid-template-columns:1fr;}
+  .process-steps{grid-template-columns:1fr 1fr;}
   .districts-grid{grid-template-columns:repeat(2,1fr);}
   .reviews-grid{grid-template-columns:1fr;}
   .footer-top{grid-template-columns:1fr;}
@@ -622,8 +620,8 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
 <!-- ПРОЦЕСС -->
 <section class="section process" id="process">
   <div class="section-inner">
-    <div class="eyebrow"><span class="ey-text">как мы работаем</span><div class="ey-line"></div></div>
-    <h2 class="section-title fade-in">5 шагов до<br><em>прохлады</em></h2>
+    <div class="eyebrow"><span class="ey-text" style="color:rgba(201,169,110,0.5);">как мы работаем</span><div class="ey-line"></div></div>
+    <h2 class="section-title light fade-in">5 шагов до<br><em>прохлады</em></h2>
     <div class="process-steps fade-in">
       <div class="process-step"><div class="step-num">01</div><div class="step-title">Заявка</div><div class="step-desc">Звоните или пишите в WhatsApp. Ответим сразу, уточним задачу.</div></div>
       <div class="process-step"><div class="step-num">02</div><div class="step-title">Выезд и замер</div><div class="step-desc">Мастер приезжает бесплатно, замеряет и подбирает оборудование.</div></div>
