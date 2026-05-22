@@ -229,7 +229,19 @@ nav a:hover{color:var(--gold);}
 
 /* ── ОТЗЫВЫ ── */
 .reviews{background:var(--cream);padding:100px 48px;}
-.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:60px;}
+.rating-bar{display:flex;align-items:center;gap:40px;background:var(--white);border:1px solid rgba(201,169,110,0.18);border-radius:16px;padding:28px 40px;margin-bottom:56px;flex-wrap:wrap;}
+.rating-big{font-family:var(--fh);font-size:80px;font-weight:300;color:var(--text);line-height:1;}
+.rating-bar-center{display:flex;flex-direction:column;gap:6px;}
+.rating-bar-stars{color:var(--gold);font-size:20px;letter-spacing:3px;}
+.rating-bar-label{font-size:13px;color:var(--muted);}
+.rating-bar-divider{width:1px;height:56px;background:rgba(201,169,110,0.18);flex-shrink:0;}
+.rating-bar-stat{text-align:center;}
+.rating-bar-stat-num{font-family:var(--fh);font-size:32px;font-weight:400;color:var(--text);}
+.rating-bar-stat-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-top:4px;}
+.rating-bar-yandex{margin-left:auto;display:flex;flex-direction:column;align-items:flex-end;gap:10px;}
+.yandex-badge{display:flex;align-items:center;gap:8px;background:#FC3F1D;color:#fff;border-radius:10px;padding:10px 16px;font-size:13px;font-weight:600;}
+.yandex-badge-sub{font-size:11px;color:var(--muted);text-align:right;}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:0;}
 .review-card{background:var(--white);border:1px solid rgba(201,169,110,0.1);border-radius:14px;padding:36px;position:relative;overflow:hidden;transition:transform 0.3s,box-shadow 0.3s;}
 .review-card:hover{transform:translateY(-4px);box-shadow:0 16px 44px rgba(201,169,110,0.1);}
 .review-quote{position:absolute;top:16px;right:22px;font-family:var(--fh);font-size:80px;color:rgba(201,169,110,0.07);line-height:1;}
@@ -239,6 +251,9 @@ nav a:hover{color:var(--gold);}
 .reviewer-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-light));display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:18px;font-weight:600;color:var(--dark);}
 .reviewer-name{font-size:14px;font-weight:600;color:var(--text);}
 .reviewer-info{font-size:11px;color:var(--muted);margin-top:2px;}
+.reviews-footer{text-align:center;margin-top:48px;}
+.btn-reviews-all{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(201,169,110,0.3);color:var(--gold-dark);padding:14px 32px;border-radius:50px;font-size:12px;text-transform:uppercase;letter-spacing:1.5px;transition:all 0.25s;}
+.btn-reviews-all:hover{background:var(--gold);color:var(--dark);border-color:var(--gold);}
 
 /* ── РАЙОНЫ ── */
 .districts{background:var(--dark-2);padding:80px 48px;}
@@ -383,8 +398,8 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
     <a href="/" class="logo">Climat<span>Sochi</span></a>
     <nav>
       <a href="#services">Услуги</a>
+      <a href="krasnaya-polyana.html">Красная Поляна</a>
       <a href="#calc">Калькулятор</a>
-      <a href="#why">О нас</a>
       <a href="#reviews">Отзывы</a>
       <a href="#faq">FAQ</a>
       <a href="#contacts">Контакты</a>
@@ -622,12 +637,47 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
 <!-- ОТЗЫВЫ -->
 <section class="section reviews" id="reviews">
   <div class="section-inner">
-    <div class="eyebrow"><span class="ey-text">отзывы клиентов</span><div class="ey-line"></div><span class="ey-text" style="margin-left:8px;">рейтинг 4.9 · яндекс карты</span></div>
+    <div class="eyebrow"><span class="ey-text">отзывы клиентов</span><div class="ey-line"></div></div>
     <h2 class="section-title fade-in">что говорят<br><em>жители Сочи</em></h2>
+
+    <div class="rating-bar fade-in">
+      <div class="rating-big">4.9</div>
+      <div class="rating-bar-center">
+        <div class="rating-bar-stars">★★★★★</div>
+        <div class="rating-bar-label">средняя оценка</div>
+      </div>
+      <div class="rating-bar-divider"></div>
+      <div class="rating-bar-stat">
+        <div class="rating-bar-stat-num">127</div>
+        <div class="rating-bar-stat-label">отзывов</div>
+      </div>
+      <div class="rating-bar-divider"></div>
+      <div class="rating-bar-stat">
+        <div class="rating-bar-stat-num">1 500+</div>
+        <div class="rating-bar-stat-label">установок</div>
+      </div>
+      <div class="rating-bar-divider"></div>
+      <div class="rating-bar-stat">
+        <div class="rating-bar-stat-num">10 лет</div>
+        <div class="rating-bar-stat-label">на рынке</div>
+      </div>
+      <div class="rating-bar-yandex">
+        <div class="yandex-badge">🗺 Яндекс Карты</div>
+        <div class="yandex-badge-sub">127 отзывов · рейтинг 4.9 / 5</div>
+      </div>
+    </div>
+
     <div class="reviews-grid">
-      <div class="review-card fade-in"><div class="review-quote">"</div><div class="review-stars">★★★★★</div><p class="review-text">Устанавливали Haier в спальню в ЖК «Морская симфония». Приехали в день звонка, работали аккуратно, убрали за собой. Гарантия в договоре — большой плюс.</p><div class="reviewer"><div class="reviewer-avatar">И</div><div><div class="reviewer-name">Игорь Кузнецов</div><div class="reviewer-info">Центральный район · Haier AS12</div></div></div></div>
+      <div class="review-card fade-in"><div class="review-quote">"</div><div class="review-stars">★★★★★</div><p class="review-text">Устанавливали Haier в спальню в ЖК «Морская симфония». Приехали в день звонка, работали аккуратно, убрали за собой. Гарантия в договоре — большой плюс.</p><div class="reviewer"><div class="reviewer-avatar">И</div><div><div class="reviewer-name">Игорь Кузнецов</div><div class="reviewer-info">Центральный район · Установка Haier</div></div></div></div>
       <div class="review-card fade-in"><div class="review-quote">"</div><div class="review-stars">★★★★★</div><p class="review-text">Делал заправку фреоном — нашли утечку, запаяли, заправили. Работают до 22:00 — приехали в 19:00, что очень удобно. Рекомендую!</p><div class="reviewer"><div class="reviewer-avatar">А</div><div><div class="reviewer-name">Алексей Карпов</div><div class="reviewer-info">Адлер · Заправка R410A</div></div></div></div>
       <div class="review-card fade-in"><div class="review-quote">"</div><div class="review-stars">★★★★★</div><p class="review-text">Заказывала чистку после зимы. После чистки кондиционер задышал по-другому, запах пропал. Буду обращаться каждый сезон. Цена честная.</p><div class="reviewer"><div class="reviewer-avatar">М</div><div><div class="reviewer-name">Марина Соколова</div><div class="reviewer-info">Хоста · Сервисное обслуживание</div></div></div></div>
+      <div class="review-card fade-in"><div class="review-quote">"</div><div class="review-stars">★★★★★</div><p class="review-text">Поставили кондиционер на Роза Хутор с зимним комплектом. Объяснили разницу между обычным и горным — сразу взял правильный вариант. Зиму пережил отлично, обогревает на ура.</p><div class="reviewer"><div class="reviewer-avatar">Д</div><div><div class="reviewer-name">Дмитрий Северов</div><div class="reviewer-info">Красная Поляна · Монтаж + зимний комплект</div></div></div></div>
+      <div class="review-card fade-in"><div class="review-quote">"</div><div class="review-stars">★★★★★</div><p class="review-text">Ставили мульти-сплит на три комнаты в ЖК «Олимпийский». Сделали всё за день, трассы спрятали в кабель-канал. Соседи уже спрашивают контакт мастера.</p><div class="reviewer"><div class="reviewer-avatar">О</div><div><div class="reviewer-name">Ольга Нечаева</div><div class="reviewer-info">Сириус · Мульти-сплит 3 зоны</div></div></div></div>
+      <div class="review-card fade-in"><div class="review-quote">"</div><div class="review-stars">★★★★★</div><p class="review-text">Ремонт кондиционера — не запускался после зимы. Приехали, диагностика бесплатно, починили за час. Честно сказали что именно сломалось и почему. Доверяю.</p><div class="reviewer"><div class="reviewer-avatar">Р</div><div><div class="reviewer-name">Руслан Горбунов</div><div class="reviewer-info">Адлер · Ремонт платы управления</div></div></div></div>
+    </div>
+
+    <div class="reviews-footer fade-in">
+      <a href="https://yandex.ru/maps/org/climatsochi/239232996670/reviews/" target="_blank" class="btn-reviews-all">Читать все 127 отзывов на Яндекс Картах →</a>
     </div>
   </div>
 </section>
