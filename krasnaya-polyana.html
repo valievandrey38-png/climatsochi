@@ -2,19 +2,31 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=109431317', 'ym');
+    ym(109431317, 'init', {webvisor:true, clickmap:true, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/109431317" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Кондиционеры для Красной Поляны — монтаж в горах Сочи | Climatsochi</title>
+<title>Кондиционеры для Красной Поляны — монтаж в горах Сочи | ClimatSochi</title>
 <meta name="description" content="Подбор и установка кондиционеров для Красной Поляны. Знаем горный климат: работа при -20°C, зимние комплекты, защита от влаги. ☎ +7 918 905-11-01">
 <meta name="keywords" content="кондиционер Красная Поляна, монтаж кондиционера Красная Поляна, сплит система Красная Поляна, кондиционер горы Сочи, кондиционер зимний комплект, кондиционер Эсто-Садок">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://climatsochi.ru/krasnaya-polyana.html">
+<link rel="canonical" href="https://sochiclimat.pro/krasnaya-polyana.html">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
   "@type":"Service",
   "name":"Кондиционеры для Красной Поляны",
-  "provider":{"@type":"HVACBusiness","name":"Climatsochi","telephone":"+7-918-905-11-01","address":{"@type":"PostalAddress","addressLocality":"Сочи","addressRegion":"Краснодарский край"}},
+  "provider":{"@type":"HVACBusiness","name":"ClimatSochi","telephone":"+7-918-905-11-01","url":"https://sochiclimat.pro","address":{"@type":"PostalAddress","addressLocality":"Сочи","addressRegion":"Краснодарский край","addressCountry":"RU"}},
   "areaServed":["Красная Поляна","Эсто-Садок","Роза Хутор","Сочи"],
   "description":"Подбор, продажа и монтаж кондиционеров для горной зоны Сочи. Зимние комплекты, работа при -20°C."
 }
@@ -116,23 +128,22 @@ nav a:hover,nav a.active{color:var(--gold);}
 /* ── МОДЕЛИ ── */
 .models-bg{background:var(--cream);}
 .models-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;}
-.model-card{background:var(--white);border:1px solid rgba(201,169,110,0.12);border-radius:16px;overflow:hidden;transition:transform 0.3s,box-shadow 0.3s;}
+@keyframes cardGlow{0%,100%{box-shadow:0 4px 28px rgba(201,169,110,0.1),0 0 0 1px rgba(201,169,110,0.4);}50%{box-shadow:0 8px 52px rgba(201,169,110,0.28),0 0 0 1px rgba(201,169,110,0.7),0 0 40px rgba(201,169,110,0.12);}}
+.model-card{background:var(--white);border:1px solid rgba(201,169,110,0.12);border-radius:16px;overflow:hidden;transition:transform 0.3s,box-shadow 0.3s;display:flex;flex-direction:column;}
 .model-card:hover{transform:translateY(-6px);box-shadow:0 20px 52px rgba(201,169,110,0.12);}
-.model-card.featured{border-color:rgba(201,169,110,0.4);box-shadow:0 4px 24px rgba(201,169,110,0.1);}
+.model-card.featured{border-color:rgba(201,169,110,0.5);animation:cardGlow 3.5s ease-in-out infinite;}
 .model-header{background:var(--dark-2);padding:28px;position:relative;}
-.model-header.ice{background:linear-gradient(135deg,#0c1a2e,#1e3a5f);}
 .model-badge{display:inline-block;background:var(--gold);color:var(--dark);font-size:10px;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;}
-.model-badge.ice{background:var(--ice);color:#0c2a4a;}
 .model-segment{font-size:10px;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;}
 .model-name{font-family:var(--fh);font-size:22px;font-weight:400;color:var(--white);margin-bottom:4px;}
-.model-temp{font-family:var(--fh);font-size:36px;font-weight:300;color:var(--ice);line-height:1;}
+.model-temp{font-family:var(--fh);font-size:36px;font-weight:300;color:var(--gold-light);line-height:1;}
 .model-temp span{font-size:16px;}
-.model-body{padding:28px;}
+.model-body{padding:28px;display:flex;flex-direction:column;flex:1;}
 .model-desc{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:20px;}
 .model-features{display:flex;flex-direction:column;gap:8px;margin-bottom:24px;}
 .model-feature{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted);}
 .model-feature::before{content:'✓';color:var(--gold);font-weight:700;flex-shrink:0;margin-top:1px;}
-.model-price{border-top:1px solid rgba(201,169,110,0.1);padding-top:20px;display:flex;align-items:flex-end;justify-content:space-between;}
+.model-price{border-top:1px solid rgba(201,169,110,0.1);padding-top:20px;display:flex;align-items:flex-end;justify-content:space-between;margin-top:auto;}
 .model-price-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;}
 .model-price-num{font-family:var(--fh);font-size:28px;font-weight:400;color:var(--gold-dark);}
 .model-price-note{font-size:11px;color:var(--muted);}
@@ -444,7 +455,8 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
       <!-- Бюджет -->
       <div class="model-card fade-in">
         <div class="model-header">
-          <div class="model-segment">Эконом · квартира, дача</div>
+          <div class="model-badge">Эконом</div>
+          <div class="model-segment">Квартира, дача</div>
           <div class="model-name">Haier + зимний комплект</div>
           <div class="model-temp">−25°C <span>с доп. обогревом</span></div>
         </div>
@@ -469,11 +481,11 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
 
       <!-- Оптимальный -->
       <div class="model-card featured fade-in">
-        <div class="model-header ice">
-          <div class="model-badge ice">Лучший выбор</div>
-          <div class="model-segment" style="color:rgba(125,211,252,0.4);">Стандарт · квартира, шале, апартаменты</div>
+        <div class="model-header">
+          <div class="model-badge">Лучший выбор</div>
+          <div class="model-segment">Стандарт · квартира, шале, апартаменты</div>
           <div class="model-name">Kentatsu серия YUKI</div>
-          <div class="model-temp" style="color:var(--ice);">−25°C <span>без доп. оборудования</span></div>
+          <div class="model-temp">−25°C <span>без доп. оборудования</span></div>
         </div>
         <div class="model-body">
           <p class="model-desc">YUKI в переводе с японского — "снег". Серия создана специально для холодного климата. Работает при −25°C без зимнего комплекта: всё необходимое уже в базовой конструкции компрессора.</p>
@@ -484,11 +496,11 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
             <div class="model-feature">Увеличенный теплообменник для горного климата</div>
             <div class="model-feature">Гарантия производителя 3 года</div>
           </div>
-          <div class="model-price" style="border-color:rgba(125,211,252,0.12);">
+          <div class="model-price">
             <div>
-              <div class="model-price-label" style="color:rgba(255,255,255,0.3);">Под ключ</div>
-              <div class="model-price-num" style="color:var(--ice);">от 58 000 ₽</div>
-              <div class="model-price-note" style="color:rgba(255,255,255,0.25);">оборудование + монтаж</div>
+              <div class="model-price-label">Под ключ</div>
+              <div class="model-price-num">от 58 000 ₽</div>
+              <div class="model-price-note">оборудование + монтаж</div>
             </div>
             <button class="model-cta" onclick="openModal()">Заказать</button>
           </div>
@@ -705,7 +717,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
       </div>
     </div>
     <div class="footer-bottom">
-      <p class="footer-copy">© 2024 Climatsochi.ru — Кондиционеры в Сочи и Красной Поляне</p>
+      <p class="footer-copy">© <span id="copy-year"></span> sochiclimat.pro — Кондиционеры в Сочи и Красной Поляне</p>
       <p class="footer-copy">ИП Шишов Денис Михайлович</p>
     </div>
   </div>
@@ -741,6 +753,12 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
 </div>
 
 <script>
+document.getElementById('copy-year').textContent = new Date().getFullYear();
+
+function ym_goal(goal) {
+  if (typeof ym !== 'undefined') ym(109431317, 'reachGoal', goal);
+}
+
 const obs=new IntersectionObserver(entries=>{
   entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('visible'),i*110);});
 },{threshold:0.1});
@@ -752,15 +770,41 @@ function toggleFaq(el){
   if(!open){el.classList.add('open');a.classList.add('open');}
 }
 
-function openModal(){document.getElementById('modal').classList.add('show');}
-function closeModal(){document.getElementById('modal').classList.remove('show');}
-function closeModalOutside(e){if(e.target===document.getElementById('modal'))closeModal();}
-function submitModal(){
-  const p=document.getElementById('m-phone').value;
-  if(!p){alert('Укажите телефон');return;}
-  closeModal();
-  alert('Спасибо! Перезвоним в течение 5 минут.');
+function openModal(){ document.getElementById('modal').classList.add('show'); document.body.style.overflow='hidden'; ym_goal('open_modal'); }
+function closeModal(){ document.getElementById('modal').classList.remove('show'); document.body.style.overflow=''; }
+function closeModalOutside(e){ if(e.target===document.getElementById('modal')) closeModal(); }
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); });
+
+function showToast(msg) {
+  const t = document.createElement('div');
+  t.style.cssText = 'position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--dark);padding:14px 28px;border-radius:50px;font-size:13px;font-weight:600;z-index:3000;box-shadow:0 8px 32px rgba(0,0,0,0.4);white-space:nowrap;';
+  t.textContent = msg;
+  document.body.appendChild(t);
+  setTimeout(() => t.remove(), 4000);
 }
+
+async function sendForm(data) {
+  const fd = new FormData();
+  Object.entries(data).forEach(([k, v]) => fd.append(k, v));
+  fd.append('_subject', 'Новая заявка с sochiclimat.pro — Красная Поляна');
+  fd.append('_captcha', 'false');
+  fd.append('_template', 'table');
+  try { await fetch('https://formsubmit.co/climatsochi@yandex.ru', {method: 'POST', body: fd}); } catch(e) {}
+}
+
+async function submitModal(){
+  const name = document.getElementById('m-name').value.trim();
+  const phone = document.getElementById('m-phone').value.trim();
+  const service = document.getElementById('m-service').value;
+  if(!phone){ showToast('⚠ Укажите номер телефона'); return; }
+  closeModal();
+  ym_goal('submit_form');
+  await sendForm({name: name || 'Не указано', phone, service: service || 'Не выбрано', source: 'Красная Поляна'});
+  showToast('✓ Заявка принята! Перезвоним за 5 минут.');
+}
+
+document.querySelectorAll('a[href^="tel:"]').forEach(el => el.addEventListener('click', () => ym_goal('phone_click')));
+document.querySelectorAll('a[href*="wa.me"]').forEach(el => el.addEventListener('click', () => ym_goal('whatsapp_click')));
 </script>
 </body>
 </html>
