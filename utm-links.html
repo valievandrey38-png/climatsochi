@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UTM-ссылки — ClimatSochi</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#C9A96E;--dark:#0D0B08;--dark2:#1A1612;--dark3:#2A2118;--cream:#F5F0EB;--muted:#7A6E64;--white:#fff;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:var(--dark);color:var(--white);min-height:100vh;}
+.top{background:var(--dark2);border-bottom:1px solid rgba(201,169,110,0.18);padding:24px 40px;display:flex;align-items:center;justify-content:space-between;}
+.logo{font-size:20px;font-weight:600;color:var(--gold);}
+.logo span{color:rgba(255,255,255,0.4);font-weight:300;}
+.badge{background:rgba(201,169,110,0.12);border:1px solid rgba(201,169,110,0.3);color:var(--gold);padding:6px 16px;border-radius:20px;font-size:12px;}
+.wrap{max-width:1200px;margin:0 auto;padding:40px;}
+.section{margin-bottom:48px;}
+.section-title{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+.section-title::after{content:'';flex:1;height:1px;background:rgba(201,169,110,0.18);}
+table{width:100%;border-collapse:collapse;background:var(--dark2);border-radius:12px;overflow:hidden;}
+th{background:var(--dark3);padding:12px 16px;text-align:left;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.35);}
+td{padding:13px 16px;border-bottom:1px solid rgba(255,255,255,0.04);vertical-align:middle;}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:rgba(255,255,255,0.02);}
+.url{font-family:monospace;font-size:12px;color:rgba(255,255,255,0.55);word-break:break-all;max-width:480px;}
+.page-tag{display:inline-block;background:rgba(201,169,110,0.1);border:1px solid rgba(201,169,110,0.22);color:var(--gold);padding:3px 10px;border-radius:20px;font-size:11px;white-space:nowrap;}
+.campaign-tag{display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.5);padding:3px 10px;border-radius:20px;font-size:11px;white-space:nowrap;}
+.copy-btn{background:transparent;border:1px solid rgba(201,169,110,0.35);color:var(--gold);padding:7px 14px;border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;transition:all 0.2s;white-space:nowrap;}
+.copy-btn:hover{background:var(--gold);color:var(--dark);}
+.copy-btn.copied{background:#22c55e;border-color:#22c55e;color:#fff;}
+.info-box{background:var(--dark2);border:1px solid rgba(201,169,110,0.15);border-radius:12px;padding:24px;margin-bottom:32px;}
+.info-box h3{font-size:15px;font-weight:600;color:var(--white);margin-bottom:12px;}
+.info-box p{font-size:13px;color:rgba(255,255,255,0.45);line-height:1.7;margin-bottom:8px;}
+.info-box p:last-child{margin-bottom:0;}
+.param{display:inline-block;background:rgba(201,169,110,0.1);border:1px solid rgba(201,169,110,0.2);color:var(--gold);padding:2px 8px;border-radius:4px;font-family:monospace;font-size:12px;}
+.source-label{font-size:12px;font-weight:600;color:rgba(255,255,255,0.6);}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="logo">ClimatSochi <span>/ UTM-ссылки</span></div>
+  <div class="badge">sochiclimat.pro</div>
+</div>
+<div class="wrap">
+
+  <!-- КАК ИСПОЛЬЗОВАТЬ -->
+  <div class="info-box">
+    <h3>Как использовать UTM-ссылки</h3>
+    <p>UTM-метки — это добавки к обычной ссылке, которые говорят Яндекс.Метрике <strong style="color:#fff">откуда пришёл клиент</strong>. Скопируйте нужную ссылку и вставьте её в поле «Ссылка» при создании объявления в Яндекс.Директе.</p>
+    <p>Параметр <span class="param">{keyword}</span> Яндекс подставит автоматически — вы увидите точный поисковый запрос, по которому пришёл клиент.</p>
+    <p>В Яндекс.Метрике смотрите: Отчёты → Источники → Метки UTM. Там будет видно, какая кампания и какой запрос принёс заявки.</p>
+  </div>
+
+  <!-- ЯНДЕКС.ДИРЕКТ -->
+  <div class="section">
+    <div class="section-title">☑ Яндекс.Директ — Поиск</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Страница</th>
+          <th>Кампания</th>
+          <th>UTM-ссылка</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="page-tag">Центр Сочи</span></td>
+          <td><span class="campaign-tag">chistka-sochi</span></td>
+          <td class="url" id="u1">https://sochiclimat.pro/sochi-centr.html?utm_source=yandex&utm_medium=cpc&utm_campaign=chistka-sochi&utm_content=search&utm_term={keyword}</td>
+          <td><button class="copy-btn" onclick="copy('u1',this)">Копировать</button></td>
+        </tr>
+        <tr>
+          <td><span class="page-tag">Центр Сочи</span></td>
+          <td><span class="campaign-tag">zapravka-sochi</span></td>
+          <td class="url" id="u2">https://sochiclimat.pro/zapravka.html?utm_source=yandex&utm_medium=cpc&utm_campaign=zapravka-sochi&utm_content=search&utm_term={keyword}</td>
+          <td><button class="copy-btn" onclick="copy('u2',this)">Копировать</button></td>
+        </tr>
+        <tr>
+          <td><span class="page-tag">Центр Сочи</span></td>
+          <td><span class="campaign-tag">remont-sochi</span></td>
+          <td class="url" id="u3">https://sochiclimat.pro/remont.html?utm_source=yandex&utm_medium=cpc&utm_campaign=remont-sochi&utm_content=search&utm_term={keyword}</td>
+          <td><button class="copy-btn" onclick="copy('u3',this)">Копировать</button></td>
+        </tr>
+        <tr>
+          <td><span class="page-tag">Центр Сочи</span></td>
+          <td><span class="campaign-tag">montazh-sochi</span></td>
+          <td class="url" id="u4">https://sochiclimat.pro/montazh.html?utm_source=yandex&utm_medium=cpc&utm_campaign=montazh-sochi&utm_content=search&utm_term={keyword}</td>
+          <td><button class="copy-btn" onclick="copy('u4',this)">Копировать</button></td>
+        </tr>
+        <tr>
+          <td><span class="page-tag">Адлер</span></td>
+          <td><span class="campaign-tag">chistka-adler</span></td>
+          <td class="url" id="u5">https://sochiclimat.pro/adler.html?utm_source=yandex&utm_medium=cpc&utm_campaign=chistka-adler&utm_content=search&utm_term={keyword}</td>
+          <td><button class="copy-btn" onclick="copy('u5',this)">Копировать</button></td>
+        </tr>
+        <tr>
+          <td><span class="page-tag">Адлер</span></td>
+          <td><span class="campaign-tag">zapravka-adler</span></td>
+          <td class="url" id="u6">https://sochiclimat.pro/adler.html?utm_source=yandex&utm_medium=cpc&utm_campaign=zapravka-adler&utm_content=search&utm_term={keyword}</td>
+          <td><button class="copy-btn" onclick="copy('u6',this)">Копировать</button></td>
+        </tr>
+        <tr>
+          <td><span class="page-tag">Адлер</span></td>
+          <td><span class="campaign-tag">remont-adler</span></td>
+          <td class="url" id="u7">https://sochiclimat.pro/adler.html?utm_source=yandex&utm_medium=cpc&utm_campaign=remont-adler&utm_content=search&utm_term={keyword}</td>
+          <td><button class="copy-btn" onclick="copy('u7',this)">Копировать</button></td>
+        </tr>
+        <tr>
+          <td><span class="page-tag">Красная Поляна</span></td>
+          <td><span class="campaign-tag">obsluzhivanie-kp</span></td>
+          <td class="url" id="u8">https://sochiclimat.pro/krasnaya-polyana.html?utm_source=yandex&utm_medium=cpc&utm_campaign=obsluzhivanie-kp&utm_content=search&utm_term={keyword}</td>
+          <td><button class="copy-btn" onclick="copy('u8',this)">Копировать</button></td>
+        </tr>
+        <tr>
+          <td><span class="page-tag">Главная</span></td>
+          <td><span class="campaign-tag">brand</span></td>
+          <td class="url" id="u9">https://sochiclimat.pro/?utm_source=yandex&utm_medium=cpc&utm_campaign=brand&utm_content=search&utm_term={keyword}</td>
+          <td><button class="copy-btn" onclick="copy('u9',this)">Копировать</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ЯНДЕКС.ДИРЕКТ РСЯ (баннеры) -->
+  <div class="section">
+    <div class="section-title">☑ Яндекс.Директ — РСЯ (баннеры)</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Страница</th>
+          <th>Кампания</th>
+          <th>UTM-ссылка</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="page-tag">Центр Сочи</span></td>
+          <td><span class="campaign-tag">chistka-sochi / banner1</span></td>
+          <td class="url" id="u10">https://sochiclimat.pro/sochi-centr.html?utm_source=yandex&utm_medium=cpc&utm_campaign=chistka-sochi&utm_content=banner1</td>
+          <td><button class="copy-btn" onclick="copy('u10',this)">Копировать</button></td>
+        </tr>
+        <tr>
+          <td><span class="page-tag">Центр Сочи</span></td>
+          <td><span class="campaign-tag">zapravka-sochi / banner1</span></td>
+          <td class="url" id="u11">https://sochiclimat.pro/zapravka.html?utm_source=yandex&utm_medium=cpc&utm_campaign=zapravka-sochi&utm_content=banner1</td>
+          <td><button class="copy-btn" onclick="copy('u11',this)">Копировать</button></td>
+        </tr>
+        <tr>
+          <td><span class="page-tag">Адлер</span></td>
+          <td><span class="campaign-tag">chistka-adler / banner1</span></td>
+          <td class="url" id="u12">https://sochiclimat.pro/adler.html?utm_source=yandex&utm_medium=cpc&utm_campaign=chistka-adler&utm_content=banner1</td>
+          <td><button class="copy-btn" onclick="copy('u12',this)">Копировать</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- АВИТО -->
+  <div class="section">
+    <div class="section-title">☑ Авито</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Страница</th>
+          <th>Кампания</th>
+          <th>UTM-ссылка</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="page-tag">Центр Сочи</span></td>
+          <td><span class="campaign-tag">chistka-sochi</span></td>
+          <td class="url" id="u13">https://sochiclimat.pro/sochi-centr.html?utm_source=avito&utm_medium=referral&utm_campaign=chistka-sochi&utm_content=listing</td>
+          <td><button class="copy-btn" onclick="copy('u13',this)">Копировать</button></td>
+        </tr>
+        <tr>
+          <td><span class="page-tag">Адлер</span></td>
+          <td><span class="campaign-tag">chistka-adler</span></td>
+          <td class="url" id="u14">https://sochiclimat.pro/adler.html?utm_source=avito&utm_medium=referral&utm_campaign=chistka-adler&utm_content=listing</td>
+          <td><button class="copy-btn" onclick="copy('u14',this)">Копировать</button></td>
+        </tr>
+        <tr>
+          <td><span class="page-tag">Главная</span></td>
+          <td><span class="campaign-tag">remont-sochi</span></td>
+          <td class="url" id="u15">https://sochiclimat.pro/remont.html?utm_source=avito&utm_medium=referral&utm_campaign=remont-sochi&utm_content=listing</td>
+          <td><button class="copy-btn" onclick="copy('u15',this)">Копировать</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ВКОНТАКТЕ -->
+  <div class="section">
+    <div class="section-title">☑ ВКонтакте</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Страница</th>
+          <th>Кампания</th>
+          <th>UTM-ссылка</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="page-tag">Центр Сочи</span></td>
+          <td><span class="campaign-tag">chistka-sochi / post1</span></td>
+          <td class="url" id="u16">https://sochiclimat.pro/sochi-centr.html?utm_source=vk&utm_medium=social&utm_campaign=chistka-sochi&utm_content=post1</td>
+          <td><button class="copy-btn" onclick="copy('u16',this)">Копировать</button></td>
+        </tr>
+        <tr>
+          <td><span class="page-tag">Адлер</span></td>
+          <td><span class="campaign-tag">adler / post1</span></td>
+          <td class="url" id="u17">https://sochiclimat.pro/adler.html?utm_source=vk&utm_medium=social&utm_campaign=chistka-adler&utm_content=post1</td>
+          <td><button class="copy-btn" onclick="copy('u17',this)">Копировать</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- INSTAGRAM / TELEGRAM -->
+  <div class="section">
+    <div class="section-title">☑ Instagram / Telegram</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Страница</th>
+          <th>Кампания</th>
+          <th>UTM-ссылка</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="page-tag">Главная</span></td>
+          <td><span class="campaign-tag">instagram bio</span></td>
+          <td class="url" id="u18">https://sochiclimat.pro/?utm_source=instagram&utm_medium=social&utm_campaign=brand&utm_content=bio</td>
+          <td><button class="copy-btn" onclick="copy('u18',this)">Копировать</button></td>
+        </tr>
+        <tr>
+          <td><span class="page-tag">Центр Сочи</span></td>
+          <td><span class="campaign-tag">instagram stories</span></td>
+          <td class="url" id="u19">https://sochiclimat.pro/sochi-centr.html?utm_source=instagram&utm_medium=social&utm_campaign=chistka-sochi&utm_content=stories</td>
+          <td><button class="copy-btn" onclick="copy('u19',this)">Копировать</button></td>
+        </tr>
+        <tr>
+          <td><span class="page-tag">Главная</span></td>
+          <td><span class="campaign-tag">telegram</span></td>
+          <td class="url" id="u20">https://sochiclimat.pro/?utm_source=telegram&utm_medium=messenger&utm_campaign=brand&utm_content=post</td>
+          <td><button class="copy-btn" onclick="copy('u20',this)">Копировать</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- WHATSAPP РАССЫЛКА -->
+  <div class="section">
+    <div class="section-title">☑ WhatsApp рассылка</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Страница</th>
+          <th>Повод</th>
+          <th>UTM-ссылка</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="page-tag">Центр Сочи</span></td>
+          <td><span class="campaign-tag">сезонная рассылка весна</span></td>
+          <td class="url" id="u21">https://sochiclimat.pro/sochi-centr.html?utm_source=whatsapp&utm_medium=messenger&utm_campaign=chistka-sochi&utm_content=spring-mailing</td>
+          <td><button class="copy-btn" onclick="copy('u21',this)">Копировать</button></td>
+        </tr>
+        <tr>
+          <td><span class="page-tag">Центр Сочи</span></td>
+          <td><span class="campaign-tag">сезонная рассылка осень</span></td>
+          <td class="url" id="u22">https://sochiclimat.pro/sochi-centr.html?utm_source=whatsapp&utm_medium=messenger&utm_campaign=chistka-sochi&utm_content=autumn-mailing</td>
+          <td><button class="copy-btn" onclick="copy('u22',this)">Копировать</button></td>
+        </tr>
+        <tr>
+          <td><span class="page-tag">Адлер</span></td>
+          <td><span class="campaign-tag">рассылка адлер</span></td>
+          <td class="url" id="u23">https://sochiclimat.pro/adler.html?utm_source=whatsapp&utm_medium=messenger&utm_campaign=chistka-adler&utm_content=mailing</td>
+          <td><button class="copy-btn" onclick="copy('u23',this)">Копировать</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- GOOGLE ADS -->
+  <div class="section">
+    <div class="section-title">☑ Google Ads</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Страница</th>
+          <th>Кампания</th>
+          <th>UTM-ссылка</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="page-tag">Центр Сочи</span></td>
+          <td><span class="campaign-tag">chistka-sochi</span></td>
+          <td class="url" id="u24">https://sochiclimat.pro/sochi-centr.html?utm_source=google&utm_medium=cpc&utm_campaign=chistka-sochi&utm_content=search&utm_term={keyword}</td>
+          <td><button class="copy-btn" onclick="copy('u24',this)">Копировать</button></td>
+        </tr>
+        <tr>
+          <td><span class="page-tag">Адлер</span></td>
+          <td><span class="campaign-tag">chistka-adler</span></td>
+          <td class="url" id="u25">https://sochiclimat.pro/adler.html?utm_source=google&utm_medium=cpc&utm_campaign=chistka-adler&utm_content=search&utm_term={keyword}</td>
+          <td><button class="copy-btn" onclick="copy('u25',this)">Копировать</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="height:48px;"></div>
+</div>
+
+<script>
+function copy(id, btn) {
+  const text = document.getElementById(id).textContent.trim();
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = '✓ Скопировано';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Копировать'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+</script>
+</body>
+</html>

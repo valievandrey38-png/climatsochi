@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Шаблоны Яндекс.Директ — ClimatSochi</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#C9A96E;--dark:#0D0B08;--dark2:#1A1612;--dark3:#2A2118;--cream:#F5F0EB;--muted:#7A6E64;--white:#fff;--green:#22c55e;--red:#ef4444;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:var(--dark);color:var(--white);min-height:100vh;}
+.top{background:var(--dark2);border-bottom:1px solid rgba(201,169,110,0.18);padding:24px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:gap;}
+.logo{font-size:20px;font-weight:600;color:var(--gold);}
+.logo span{color:rgba(255,255,255,0.4);font-weight:300;}
+.badge{background:rgba(201,169,110,0.12);border:1px solid rgba(201,169,110,0.3);color:var(--gold);padding:6px 16px;border-radius:20px;font-size:12px;}
+.wrap{max-width:1200px;margin:0 auto;padding:40px;}
+h2{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+h2::after{content:'';flex:1;height:1px;background:rgba(201,169,110,0.18);}
+/* TABS */
+.tabs{display:flex;gap:4px;margin-bottom:32px;flex-wrap:wrap;}
+.tab{padding:9px 18px;border-radius:8px;font-size:12px;font-weight:500;cursor:pointer;border:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.4);background:var(--dark2);transition:all 0.2s;}
+.tab.active,.tab:hover{background:var(--gold);color:var(--dark);border-color:var(--gold);}
+.panel{display:none;} .panel.active{display:block;}
+/* AD CARD */
+.ad-card{background:var(--dark2);border:1px solid rgba(201,169,110,0.13);border-radius:14px;padding:28px;margin-bottom:20px;}
+.ad-card-title{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.25);margin-bottom:18px;}
+.field-row{margin-bottom:14px;}
+.field-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1.2px;color:rgba(255,255,255,0.28);margin-bottom:6px;display:flex;justify-content:space-between;align-items:center;}
+.char-count{font-size:11px;font-weight:500;}
+.char-ok{color:var(--green);}
+.char-warn{color:#f59e0b;}
+.field-text{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:12px 14px;font-size:14px;color:var(--white);line-height:1.5;position:relative;}
+.copy-btn{display:inline-block;background:transparent;border:1px solid rgba(201,169,110,0.3);color:var(--gold);padding:5px 12px;border-radius:5px;font-size:11px;font-weight:600;cursor:pointer;transition:all 0.2s;margin-top:7px;}
+.copy-btn:hover{background:var(--gold);color:var(--dark);}
+.copy-btn.copied{background:var(--green);border-color:var(--green);color:#fff;}
+/* AD PREVIEW */
+.preview{background:#fff;border-radius:10px;padding:20px 24px;margin-bottom:20px;}
+.preview-label{font-size:10px;color:#888;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;}
+.preview-ad-title{color:#0d6efd;font-size:17px;font-weight:400;margin-bottom:2px;line-height:1.3;}
+.preview-url{color:#198754;font-size:13px;margin-bottom:6px;}
+.preview-text{color:#212529;font-size:14px;line-height:1.5;margin-bottom:8px;}
+.preview-links{display:flex;gap:12px;flex-wrap:wrap;}
+.preview-link{color:#0d6efd;font-size:13px;border-bottom:1px solid #0d6efd;}
+/* KEYWORDS TABLE */
+.kw-table{width:100%;border-collapse:collapse;background:var(--dark2);border-radius:12px;overflow:hidden;}
+.kw-table th{background:var(--dark3);padding:11px 14px;text-align:left;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.3);}
+.kw-table td{padding:11px 14px;border-bottom:1px solid rgba(255,255,255,0.04);font-size:13px;}
+.kw-table tr:last-child td{border-bottom:none;}
+.kw-table tr:hover td{background:rgba(255,255,255,0.02);}
+.badge-freq{display:inline-block;padding:2px 9px;border-radius:20px;font-size:10px;font-weight:600;}
+.freq-h{background:rgba(34,197,94,0.12);color:#22c55e;}
+.freq-m{background:rgba(245,158,11,0.12);color:#f59e0b;}
+.freq-l{background:rgba(239,68,68,0.12);color:#ef4444;}
+.match-exact{background:rgba(14,165,233,0.12);color:#38bdf8;padding:2px 8px;border-radius:4px;font-size:10px;}
+.match-phrase{background:rgba(168,85,247,0.12);color:#c084fc;padding:2px 8px;border-radius:4px;font-size:10px;}
+/* MINUS WORDS */
+.minus-list{display:flex;flex-wrap:wrap;gap:8px;}
+.minus-word{background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.25);color:#fca5a5;padding:5px 12px;border-radius:6px;font-size:12px;}
+/* TIPS */
+.tip{background:var(--dark2);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:16px 20px;margin-bottom:12px;}
+.tip-title{font-size:13px;font-weight:600;color:var(--white);margin-bottom:5px;}
+.tip-text{font-size:13px;color:rgba(255,255,255,0.4);line-height:1.6;}
+.sitelink-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px;}
+.sitelink{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:10px 12px;}
+.sitelink-title{font-size:13px;color:var(--white);margin-bottom:3px;}
+.sitelink-url{font-size:11px;color:var(--muted);}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="logo">ClimatSochi <span>/ Яндекс.Директ</span></div>
+  <div class="badge">6 кампаний · 48 ключей</div>
+</div>
+<div class="wrap">
+
+  <!-- ТАБЫ -->
+  <div class="tabs">
+    <div class="tab active" onclick="showTab('kw')">Ключевые слова</div>
+    <div class="tab" onclick="showTab('a')">А. Чистка — Сочи</div>
+    <div class="tab" onclick="showTab('b')">Б. Заправка — Сочи</div>
+    <div class="tab" onclick="showTab('c')">В. Ремонт — Сочи</div>
+    <div class="tab" onclick="showTab('d')">Г. Чистка+Заправка — Адлер</div>
+    <div class="tab" onclick="showTab('e')">Д. Монтаж — Сочи</div>
+    <div class="tab" onclick="showTab('f')">Е. Красная Поляна</div>
+    <div class="tab" onclick="showTab('minus')">Минус-слова</div>
+    <div class="tab" onclick="showTab('tips')">Советы</div>
+  </div>
+
+  <!-- КЛЮЧЕВЫЕ СЛОВА -->
+  <div class="panel active" id="panel-kw">
+    <h2>Ключевые слова по кластерам</h2>
+
+    <h2>Кластер 1 — Чистка кондиционера · Сочи</h2>
+    <table class="kw-table" style="margin-bottom:24px;">
+      <thead><tr><th>Ключевой запрос</th><th>Тип</th><th>Частота</th></tr></thead>
+      <tbody>
+        <tr><td>чистка кондиционера сочи</td><td><span class="match-exact">точное</span></td><td><span class="badge-freq freq-h">высокая</span></td></tr>
+        <tr><td>почистить кондиционер сочи</td><td><span class="match-phrase">фраза</span></td><td><span class="badge-freq freq-h">высокая</span></td></tr>
+        <tr><td>обслуживание кондиционера сочи</td><td><span class="match-phrase">фраза</span></td><td><span class="badge-freq freq-h">высокая</span></td></tr>
+        <tr><td>промывка кондиционера сочи</td><td><span class="match-phrase">фраза</span></td><td><span class="badge-freq freq-m">средняя</span></td></tr>
+        <tr><td>чистка сплит системы сочи</td><td><span class="match-phrase">фраза</span></td><td><span class="badge-freq freq-m">средняя</span></td></tr>
+        <tr><td>чистка кондиционера хоста</td><td><span class="match-phrase">фраза</span></td><td><span class="badge-freq freq-m">средняя</span></td></tr>
+        <tr><td>чистка кондиционера мацеста</td><td><span class="match-phrase">фраза</span></td><td><span class="badge-freq freq-l">низкая</span></td></tr>
+        <tr><td>дезинфекция кондиционера сочи</td><td><span class="match-phrase">фраза</span></td><td><span class="badge-freq freq-l">низкая</span></td></tr>
+        <tr><td>сезонное обслуживание кондиционера сочи</td><td><span class="match-phrase">фраза</span></td><td><span class="badge-freq freq-m">средняя</span></td></tr>
+        <tr><td>мастер кондиционер сочи чистка</td><td><span class="match-phrase">фраза</span></td><td><span class="badge-freq freq-m">средняя</span></td></tr>
+      </tbody>
+    </table>
+
+    <h2>Кластер 2 — Заправка фреоном · Сочи</h2>
+    <table class="kw-table" style="margin-bottom:24px;">
+      <thead><tr><th>Ключевой запрос</th><th>Тип</th><th>Частота</th></tr></thead>
+      <tbody>
+        <tr><td>заправка фреоном сочи</td><td><span class="match-exact">точное</span></td><td><span class="badge-freq freq-h">высокая</span></td></tr>
+        <tr><td>заправить кондиционер сочи</td><td><span class="match-phrase">фраза</span></td><td><span class="badge-freq freq-h">высокая</span></td></tr>
+        <tr><td>кондиционер не холодит сочи</td><td><span class="match-phrase">фраза</span></td><td><span class="badge-freq freq-m">средняя</span></td></tr>
+        <tr><td>заправка r410a сочи</td><td><span class="match-exact">точное</span></td><td><span class="badge-freq freq-m">средняя</span></td></tr>
+        <tr><td>заправка r32 сочи</td><td><span class="match-exact">точное</span></td><td><span class="badge-freq freq-l">низкая</span></td></tr>
+        <tr><td>фреон кондиционер сочи</td><td><span class="match-phrase">фраза</span></td><td><span class="badge-freq freq-m">средняя</span></td></tr>
+        <tr><td>утечка фреона кондиционер сочи</td><td><span class="match-phrase">фраза</span></td><td><span class="badge-freq freq-l">низкая</span></td></tr>
+        <tr><td>заправка кондиционера цена сочи</td><td><span class="match-phrase">фраза</span></td><td><span class="badge-freq freq-m">средняя</span></td></tr>
+      </tbody>
+    </table>
+
+    <h2>Кластер 3 — Ремонт кондиционера · Сочи</h2>
+    <table class="kw-table" style="margin-bottom:24px;">
+      <thead><tr><th>Ключевой запрос</th><th>Тип</th><th>Частота</th></tr></thead>
+      <tbody>
+        <tr><td>ремонт кондиционера сочи</td><td><span class="match-exact">точное</span></td><td><span class="badge-freq freq-h">высокая</span></td></tr>
+        <tr><td>не работает кондиционер сочи</td><td><span class="match-phrase">фраза</span></td><td><span class="badge-freq freq-m">средняя</span></td></tr>
+        <tr><td>сломался кондиционер сочи</td><td><span class="match-phrase">фраза</span></td><td><span class="badge-freq freq-m">средняя</span></td></tr>
+        <tr><td>ремонт сплит системы сочи</td><td><span class="match-phrase">фраза</span></td><td><span class="badge-freq freq-m">средняя</span></td></tr>
+        <tr><td>мастер по кондиционерам сочи</td><td><span class="match-phrase">фраза</span></td><td><span class="badge-freq freq-h">высокая</span></td></tr>
+        <tr><td>диагностика кондиционера сочи</td><td><span class="match-phrase">фраза</span></td><td><span class="badge-freq freq-l">низкая</span></td></tr>
+        <tr><td>кондиционер шумит сочи</td><td><span class="match-phrase">фраза</span></td><td><span class="badge-freq freq-l">низкая</span></td></tr>
+        <tr><td>ремонт кондиционера цена сочи</td><td><span class="match-phrase">фраза</span></td><td><span class="badge-freq freq-m">средняя</span></td></tr>
+      </tbody>
+    </table>
+
+    <h2>Кластер 4 — Чистка + Заправка · Адлер</h2>
+    <table class="kw-table" style="margin-bottom:24px;">
+      <thead><tr><th>Ключевой запрос</th><th>Тип</th><th>Частота</th></tr></thead>
+      <tbody>
+        <tr><td>чистка кондиционера адлер</td><td><span class="match-exact">точное</span></td><td><span class="badge-freq freq-h">высокая</span></td></tr>
+        <tr><td>заправка фреоном адлер</td><td><span class="match-exact">точное</span></td><td><span class="badge-freq freq-h">высокая</span></td></tr>
+        <tr><td>обслуживание кондиционера адлер</td><td><span class="match-phrase">фраза</span></td><td><span class="badge-freq freq-m">средняя</span></td></tr>
+        <tr><td>кондиционер адлер сириус</td><td><span class="match-phrase">фраза</span></td><td><span class="badge-freq freq-m">средняя</span></td></tr>
+        <tr><td>ремонт кондиционера адлер</td><td><span class="match-phrase">фраза</span></td><td><span class="badge-freq freq-m">средняя</span></td></tr>
+        <tr><td>мастер кондиционер адлер</td><td><span class="match-phrase">фраза</span></td><td><span class="badge-freq freq-m">средняя</span></td></tr>
+      </tbody>
+    </table>
+
+    <h2>Кластер 5 — Монтаж · Сочи</h2>
+    <table class="kw-table" style="margin-bottom:24px;">
+      <thead><tr><th>Ключевой запрос</th><th>Тип</th><th>Частота</th></tr></thead>
+      <tbody>
+        <tr><td>установка кондиционера сочи</td><td><span class="match-exact">точное</span></td><td><span class="badge-freq freq-h">высокая</span></td></tr>
+        <tr><td>монтаж кондиционера сочи</td><td><span class="match-exact">точное</span></td><td><span class="badge-freq freq-h">высокая</span></td></tr>
+        <tr><td>установить кондиционер сочи</td><td><span class="match-phrase">фраза</span></td><td><span class="badge-freq freq-h">высокая</span></td></tr>
+        <tr><td>монтаж сплит системы сочи цена</td><td><span class="match-phrase">фраза</span></td><td><span class="badge-freq freq-m">средняя</span></td></tr>
+        <tr><td>установка кондиционера квартира сочи</td><td><span class="match-phrase">фраза</span></td><td><span class="badge-freq freq-m">средняя</span></td></tr>
+        <tr><td>монтаж кондиционера адлер</td><td><span class="match-phrase">фраза</span></td><td><span class="badge-freq freq-m">средняя</span></td></tr>
+      </tbody>
+    </table>
+
+    <h2>Кластер 6 — Красная Поляна</h2>
+    <table class="kw-table">
+      <thead><tr><th>Ключевой запрос</th><th>Тип</th><th>Частота</th></tr></thead>
+      <tbody>
+        <tr><td>кондиционер красная поляна</td><td><span class="match-phrase">фраза</span></td><td><span class="badge-freq freq-m">средняя</span></td></tr>
+        <tr><td>установка кондиционера красная поляна</td><td><span class="match-phrase">фраза</span></td><td><span class="badge-freq freq-m">средняя</span></td></tr>
+        <tr><td>кондиционер горы сочи</td><td><span class="match-phrase">фраза</span></td><td><span class="badge-freq freq-l">низкая</span></td></tr>
+        <tr><td>кондиционер эсто садок</td><td><span class="match-phrase">фраза</span></td><td><span class="badge-freq freq-l">низкая</span></td></tr>
+        <tr><td>зимний комплект кондиционер сочи</td><td><span class="match-phrase">фраза</span></td><td><span class="badge-freq freq-l">низкая</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- КАМПАНИЯ А: ЧИСТКА СОЧИ -->
+  <div class="panel" id="panel-a">
+    <h2>Кампания А — Чистка кондиционера · Сочи</h2>
+    <p style="font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:24px;">Посадочная страница: <span style="color:var(--gold)">sochiclimat.pro/sochi-centr.html</span></p>
+
+    <div class="preview">
+      <div class="preview-label">Предпросмотр объявления</div>
+      <div class="preview-ad-title">Чистка кондиционера в Сочи — Выезд за 2 часа</div>
+      <div class="preview-url">sochiclimat.pro › sochi-centr</div>
+      <div class="preview-text">Профессиональная чистка сплит-систем. Дезинфекция, промывка, проверка фреона. От 2 500 ₽. Оплата по факту.</div>
+      <div class="preview-links">
+        <span class="preview-link">Цены на чистку</span>
+        <span class="preview-link">Заправка фреоном</span>
+        <span class="preview-link">Ремонт кондиционеров</span>
+        <span class="preview-link">Позвонить</span>
+      </div>
+    </div>
+
+    <div class="ad-card">
+      <div class="ad-card-title">Вариант 1</div>
+      <div class="field-row">
+        <div class="field-label">Заголовок 1 <span style="font-size:10px;color:rgba(255,255,255,0.2)">(макс. 56 символов)</span><span class="char-count char-ok" id="ca1-c">41 / 56</span></div>
+        <div class="field-text" id="ca1">Чистка кондиционера в Сочи — Выезд за 2 часа</div>
+        <button class="copy-btn" onclick="cp('ca1',this)">Копировать</button>
+      </div>
+      <div class="field-row">
+        <div class="field-label">Заголовок 2 <span style="font-size:10px;color:rgba(255,255,255,0.2)">(макс. 30 символов)</span><span class="char-count char-ok">22 / 30</span></div>
+        <div class="field-text" id="ca2">От 2 500 ₽. Без предоплаты</div>
+        <button class="copy-btn" onclick="cp('ca2',this)">Копировать</button>
+      </div>
+      <div class="field-row">
+        <div class="field-label">Текст объявления <span style="font-size:10px;color:rgba(255,255,255,0.2)">(макс. 81 символ)</span><span class="char-count char-ok">79 / 81</span></div>
+        <div class="field-text" id="ca3">Профессиональная чистка и дезинфекция. Центр Сочи, Хоста, Мацеста. Работаем с 2014 года.</div>
+        <button class="copy-btn" onclick="cp('ca3',this)">Копировать</button>
+      </div>
+    </div>
+
+    <div class="ad-card">
+      <div class="ad-card-title">Вариант 2</div>
+      <div class="field-row">
+        <div class="field-label">Заголовок 1 <span style="font-size:10px;color:rgba(255,255,255,0.2)">(макс. 56 символов)</span><span class="char-count char-ok">52 / 56</span></div>
+        <div class="field-text" id="ca4">Почистить кондиционер в Сочи — Дезинфекция в подарок</div>
+        <button class="copy-btn" onclick="cp('ca4',this)">Копировать</button>
+      </div>
+      <div class="field-row">
+        <div class="field-label">Заголовок 2<span class="char-count char-ok">28 / 30</span></div>
+        <div class="field-text" id="ca5">Гарантия качества. Договор</div>
+        <button class="copy-btn" onclick="cp('ca5',this)">Копировать</button>
+      </div>
+      <div class="field-row">
+        <div class="field-label">Текст объявления<span class="char-count char-ok">76 / 81</span></div>
+        <div class="field-text" id="ca6">Убираем запах, восстанавливаем мощность, чистим дренаж. Оплата по факту работы.</div>
+        <button class="copy-btn" onclick="cp('ca6',this)">Копировать</button>
+      </div>
+    </div>
+
+    <div class="ad-card">
+      <div class="ad-card-title">Быстрые ссылки (4 штуки)</div>
+      <div class="sitelink-grid">
+        <div class="sitelink"><div class="sitelink-title">Цены на чистку</div><div class="sitelink-url">sochiclimat.pro/sochi-centr.html#prices</div></div>
+        <div class="sitelink"><div class="sitelink-title">Заправка фреоном</div><div class="sitelink-url">sochiclimat.pro/zapravka.html</div></div>
+        <div class="sitelink"><div class="sitelink-title">Ремонт кондиционеров</div><div class="sitelink-url">sochiclimat.pro/remont.html</div></div>
+        <div class="sitelink"><div class="sitelink-title">Позвонить мастеру</div><div class="sitelink-url">tel:+79189051101</div></div>
+      </div>
+    </div>
+    <div class="ad-card">
+      <div class="ad-card-title">Уточнения (до 25 символов каждое)</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;">
+        <span style="background:rgba(255,255,255,0.05);padding:6px 12px;border-radius:6px;font-size:13px;">⏱ Выезд за 2 часа</span>
+        <span style="background:rgba(255,255,255,0.05);padding:6px 12px;border-radius:6px;font-size:13px;">💳 Оплата по факту</span>
+        <span style="background:rgba(255,255,255,0.05);padding:6px 12px;border-radius:6px;font-size:13px;">📋 Договор и гарантия</span>
+        <span style="background:rgba(255,255,255,0.05);padding:6px 12px;border-radius:6px;font-size:13px;">✓ С 2014 года в Сочи</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- КАМПАНИЯ Б: ЗАПРАВКА СОЧИ -->
+  <div class="panel" id="panel-b">
+    <h2>Кампания Б — Заправка фреоном · Сочи</h2>
+    <p style="font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:24px;">Посадочная: <span style="color:var(--gold)">sochiclimat.pro/zapravka.html</span></p>
+
+    <div class="preview">
+      <div class="preview-label">Предпросмотр объявления</div>
+      <div class="preview-ad-title">Заправка кондиционера в Сочи — R410A, R32, R22</div>
+      <div class="preview-url">sochiclimat.pro › zapravka</div>
+      <div class="preview-text">Кондиционер не холодит? Заправим фреоном сегодня. Диагностика утечки бесплатно. От 800 ₽/100г.</div>
+      <div class="preview-links"><span class="preview-link">Цены на заправку</span><span class="preview-link">Диагностика</span><span class="preview-link">Чистка</span><span class="preview-link">Позвонить</span></div>
+    </div>
+
+    <div class="ad-card">
+      <div class="ad-card-title">Вариант 1</div>
+      <div class="field-row">
+        <div class="field-label">Заголовок 1<span class="char-count char-ok">50 / 56</span></div>
+        <div class="field-text" id="cb1">Заправка кондиционера в Сочи — Диагностика бесплатно</div>
+        <button class="copy-btn" onclick="cp('cb1',this)">Копировать</button>
+      </div>
+      <div class="field-row">
+        <div class="field-label">Заголовок 2<span class="char-count char-ok">27 / 30</span></div>
+        <div class="field-text" id="cb2">От 800 ₽/100 г. R32, R410A</div>
+        <button class="copy-btn" onclick="cp('cb2',this)">Копировать</button>
+      </div>
+      <div class="field-row">
+        <div class="field-label">Текст объявления<span class="char-count char-ok">78 / 81</span></div>
+        <div class="field-text" id="cb3">Ищем утечку, устраняем, вакуумируем и заправляем. Приедем сегодня. Оплата по факту.</div>
+        <button class="copy-btn" onclick="cp('cb3',this)">Копировать</button>
+      </div>
+    </div>
+    <div class="ad-card">
+      <div class="ad-card-title">Вариант 2</div>
+      <div class="field-row">
+        <div class="field-label">Заголовок 1<span class="char-count char-ok">54 / 56</span></div>
+        <div class="field-text" id="cb4">Кондиционер не холодит в Сочи? Заправим за 1 визит</div>
+        <button class="copy-btn" onclick="cp('cb4',this)">Копировать</button>
+      </div>
+      <div class="field-row">
+        <div class="field-label">Заголовок 2<span class="char-count char-ok">26 / 30</span></div>
+        <div class="field-text" id="cb5">Выезд за 2 часа. Гарантия</div>
+        <button class="copy-btn" onclick="cp('cb5',this)">Копировать</button>
+      </div>
+      <div class="field-row">
+        <div class="field-label">Текст объявления<span class="char-count char-ok">77 / 81</span></div>
+        <div class="field-text" id="cb6">Все виды фреона в наличии. Центр Сочи, Хоста, Адлер. Без предоплаты. С 2014 года.</div>
+        <button class="copy-btn" onclick="cp('cb6',this)">Копировать</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- КАМПАНИЯ В: РЕМОНТ СОЧИ -->
+  <div class="panel" id="panel-c">
+    <h2>Кампания В — Ремонт кондиционера · Сочи</h2>
+    <p style="font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:24px;">Посадочная: <span style="color:var(--gold)">sochiclimat.pro/remont.html</span></p>
+
+    <div class="preview">
+      <div class="preview-label">Предпросмотр</div>
+      <div class="preview-ad-title">Ремонт кондиционера в Сочи — Выезд в день обращения</div>
+      <div class="preview-url">sochiclimat.pro › remont</div>
+      <div class="preview-text">Диагностика бесплатно при заказе ремонта. Все марки. Гарантия 6 месяцев. Работаем с 2014 года.</div>
+      <div class="preview-links"><span class="preview-link">Цены на ремонт</span><span class="preview-link">Диагностика</span><span class="preview-link">Чистка</span><span class="preview-link">Позвонить</span></div>
+    </div>
+
+    <div class="ad-card">
+      <div class="ad-card-title">Вариант 1</div>
+      <div class="field-row">
+        <div class="field-label">Заголовок 1<span class="char-count char-ok">53 / 56</span></div>
+        <div class="field-text" id="cc1">Ремонт кондиционера в Сочи — Диагностика бесплатно</div>
+        <button class="copy-btn" onclick="cp('cc1',this)">Копировать</button>
+      </div>
+      <div class="field-row">
+        <div class="field-label">Заголовок 2<span class="char-count char-ok">29 / 30</span></div>
+        <div class="field-text" id="cc2">От 3 000 ₽. Гарантия 6 мес.</div>
+        <button class="copy-btn" onclick="cp('cc2',this)">Копировать</button>
+      </div>
+      <div class="field-row">
+        <div class="field-label">Текст объявления<span class="char-count char-ok">80 / 81</span></div>
+        <div class="field-text" id="cc3">Кондиционер не включается, шумит или мигает ошибка? Приедем сегодня. Все марки. Договор.</div>
+        <button class="copy-btn" onclick="cp('cc3',this)">Копировать</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- КАМПАНИЯ Г: АДЛЕР -->
+  <div class="panel" id="panel-d">
+    <h2>Кампания Г — Чистка + Заправка · Адлер</h2>
+    <p style="font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:24px;">Посадочная: <span style="color:var(--gold)">sochiclimat.pro/adler.html</span></p>
+
+    <div class="preview">
+      <div class="preview-label">Предпросмотр</div>
+      <div class="preview-ad-title">Кондиционер в Адлере — Чистка и заправка за 1 визит</div>
+      <div class="preview-url">sochiclimat.pro › adler</div>
+      <div class="preview-text">Антикоррозийная защита для морского климата. Адлер, Сириус, Олимпийский парк. Выезд за 2 часа.</div>
+      <div class="preview-links"><span class="preview-link">Чистка</span><span class="preview-link">Заправка</span><span class="preview-link">Монтаж</span><span class="preview-link">Позвонить</span></div>
+    </div>
+
+    <div class="ad-card">
+      <div class="ad-card-title">Вариант 1</div>
+      <div class="field-row">
+        <div class="field-label">Заголовок 1<span class="char-count char-ok">51 / 56</span></div>
+        <div class="field-text" id="cd1">Чистка кондиционера в Адлере — Выезд за 2 часа</div>
+        <button class="copy-btn" onclick="cp('cd1',this)">Копировать</button>
+      </div>
+      <div class="field-row">
+        <div class="field-label">Заголовок 2<span class="char-count char-ok">30 / 30</span></div>
+        <div class="field-text" id="cd2">Антикоррозийная защита. Сириус</div>
+        <button class="copy-btn" onclick="cp('cd2',this)">Копировать</button>
+      </div>
+      <div class="field-row">
+        <div class="field-label">Текст объявления<span class="char-count char-ok">79 / 81</span></div>
+        <div class="field-text" id="cd3">Морской климат разрушает кондиционер без защиты. Работаем в Адлере с 2014 года. От 2 500 ₽.</div>
+        <button class="copy-btn" onclick="cp('cd3',this)">Копировать</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- КАМПАНИЯ Д: МОНТАЖ -->
+  <div class="panel" id="panel-e">
+    <h2>Кампания Д — Монтаж кондиционера · Сочи</h2>
+    <p style="font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:24px;">Посадочная: <span style="color:var(--gold)">sochiclimat.pro/montazh.html</span></p>
+
+    <div class="preview">
+      <div class="preview-label">Предпросмотр</div>
+      <div class="preview-ad-title">Установка кондиционера в Сочи — Монтаж за 1 день</div>
+      <div class="preview-url">sochiclimat.pro › montazh</div>
+      <div class="preview-text">Монтаж сплит-систем под ключ. Старый фонд и новые ЖК. Гарантия 3 года. От 6 000 ₽. С 2014 года.</div>
+      <div class="preview-links"><span class="preview-link">Цены на монтаж</span><span class="preview-link">Подобрать модель</span><span class="preview-link">Мульти-сплит</span><span class="preview-link">Позвонить</span></div>
+    </div>
+
+    <div class="ad-card">
+      <div class="ad-card-title">Вариант 1</div>
+      <div class="field-row">
+        <div class="field-label">Заголовок 1<span class="char-count char-ok">49 / 56</span></div>
+        <div class="field-text" id="ce1">Установка кондиционера в Сочи — Монтаж за 1 день</div>
+        <button class="copy-btn" onclick="cp('ce1',this)">Копировать</button>
+      </div>
+      <div class="field-row">
+        <div class="field-label">Заголовок 2<span class="char-count char-ok">30 / 30</span></div>
+        <div class="field-text" id="ce2">От 6 000 ₽. Гарантия 3 года</div>
+        <button class="copy-btn" onclick="cp('ce2',this)">Копировать</button>
+      </div>
+      <div class="field-row">
+        <div class="field-label">Текст объявления<span class="char-count char-ok">80 / 81</span></div>
+        <div class="field-text" id="ce3">Работаем в хрущёвках, новых ЖК, офисах. Убираем за собой. Договор и акт выполненных работ.</div>
+        <button class="copy-btn" onclick="cp('ce3',this)">Копировать</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- КАМПАНИЯ Е: КРАСНАЯ ПОЛЯНА -->
+  <div class="panel" id="panel-f">
+    <h2>Кампания Е — Красная Поляна</h2>
+    <p style="font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:24px;">Посадочная: <span style="color:var(--gold)">sochiclimat.pro/krasnaya-polyana.html</span></p>
+
+    <div class="preview">
+      <div class="preview-label">Предпросмотр</div>
+      <div class="preview-ad-title">Кондиционер Красная Поляна — Зимние комплекты. Монтаж</div>
+      <div class="preview-url">sochiclimat.pro › krasnaya-polyana</div>
+      <div class="preview-text">Подбор и установка кондиционеров для горного климата. Работа при −20°C. Эсто-Садок, Роза Хутор.</div>
+      <div class="preview-links"><span class="preview-link">Зимний комплект</span><span class="preview-link">Цены</span><span class="preview-link">Вопрос-ответ</span><span class="preview-link">Позвонить</span></div>
+    </div>
+
+    <div class="ad-card">
+      <div class="ad-card-title">Вариант 1</div>
+      <div class="field-row">
+        <div class="field-label">Заголовок 1<span class="char-count char-ok">55 / 56</span></div>
+        <div class="field-text" id="cf1">Кондиционер для Красной Поляны — Работа при −20°C</div>
+        <button class="copy-btn" onclick="cp('cf1',this)">Копировать</button>
+      </div>
+      <div class="field-row">
+        <div class="field-label">Заголовок 2<span class="char-count char-ok">28 / 30</span></div>
+        <div class="field-text" id="cf2">Зимний комплект. Эсто-Садок</div>
+        <button class="copy-btn" onclick="cp('cf2',this)">Копировать</button>
+      </div>
+      <div class="field-row">
+        <div class="field-label">Текст объявления<span class="char-count char-ok">79 / 81</span></div>
+        <div class="field-text" id="cf3">Горный климат — особые требования. Подберём модель с зимним комплектом. Монтаж под ключ.</div>
+        <button class="copy-btn" onclick="cp('cf3',this)">Копировать</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- МИНУС-СЛОВА -->
+  <div class="panel" id="panel-minus">
+    <h2>Минус-слова (добавить во все кампании)</h2>
+    <p style="font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:20px;">Эти слова исключают нецелевые показы — не тратьте деньги на тех, кто не купит.</p>
+    <div class="minus-list">
+      <span class="minus-word">своими руками</span>
+      <span class="minus-word">самостоятельно</span>
+      <span class="minus-word">бесплатно</span>
+      <span class="minus-word">инструкция</span>
+      <span class="minus-word">видео</span>
+      <span class="minus-word">схема</span>
+      <span class="minus-word">форум</span>
+      <span class="minus-word">как самому</span>
+      <span class="minus-word">как почистить</span>
+      <span class="minus-word">купить</span>
+      <span class="minus-word">продажа</span>
+      <span class="minus-word">интернет магазин</span>
+      <span class="minus-word">авито</span>
+      <span class="minus-word">б/у</span>
+      <span class="minus-word">бытовой</span>
+      <span class="minus-word">характеристики</span>
+      <span class="minus-word">отзывы</span>
+      <span class="minus-word">рейтинг</span>
+      <span class="minus-word">сравнение</span>
+      <span class="minus-word">какой выбрать</span>
+      <span class="minus-word">промокод</span>
+      <span class="minus-word">скидка</span>
+      <span class="minus-word">дешево</span>
+      <span class="minus-word">работа</span>
+      <span class="minus-word">вакансия</span>
+    </div>
+  </div>
+
+  <!-- СОВЕТЫ -->
+  <div class="panel" id="panel-tips">
+    <h2>Стратегия — советы для старта</h2>
+    <div class="tip">
+      <div class="tip-title">1. Начните с «ручной стратегии» ставок</div>
+      <div class="tip-text">Первые 2 недели — ручное управление ставками, не авто-стратегии. Ставьте ставку на 20–30% выше рекомендованной, чтобы набрать статистику. После 50+ кликов можно переходить на «Оптимизацию конверсий».</div>
+    </div>
+    <div class="tip">
+      <div class="tip-title">2. Один кластер = одна кампания</div>
+      <div class="tip-text">Не мешайте «чистку» и «заправку» в одну кампанию — иначе нельзя управлять ставками по каждой услуге отдельно. Метрика покажет, какая кампания даёт заявки дешевле.</div>
+    </div>
+    <div class="tip">
+      <div class="tip-title">3. Бюджет на старт — 500–700 ₽/день</div>
+      <div class="tip-text">На первые 2 недели достаточно 500–700 ₽/день на одну кампанию. Запустите сначала «Чистка Сочи» — самый частотный кластер. Через неделю добавьте «Заправка Сочи».</div>
+    </div>
+    <div class="tip">
+      <div class="tip-title">4. Геотаргетинг — только Сочи</div>
+      <div class="tip-text">В настройках кампании укажите: Сочи + радиус 30 км. Режим показа — «Расширенный» для жителей и гостей города. Для Адлера сделайте отдельную кампанию с геотаргетингом на Адлер.</div>
+    </div>
+  </div>
+
+  <div style="height:48px;"></div>
+</div>
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('panel-' + id).classList.add('active');
+  event.target.classList.add('active');
+}
+function cp(id, btn) {
+  const text = document.getElementById(id).textContent.trim();
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = '✓ Скопировано';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Копировать'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+</script>
+</body>
+</html>
