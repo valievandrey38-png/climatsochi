@@ -55,7 +55,7 @@ nav a:hover{color:var(--gold);}
 .btn-arrow{width:22px;height:22px;border-radius:50%;background:var(--gold);color:var(--dark);display:flex;align-items:center;justify-content:center;font-size:12px;}
 
 .page-hero{min-height:58vh;position:relative;display:flex;align-items:flex-end;padding-bottom:80px;overflow:hidden;}
-.page-hero-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80');background-size:cover;background-position:center;}
+.page-hero-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80');background-size:cover;background-position:center;}
 .page-hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(160deg,rgba(13,11,8,0.9) 0%,rgba(13,11,8,0.55) 50%,rgba(13,11,8,0.75) 100%);}
 .page-hero-inner{position:relative;z-index:2;max-width:1400px;margin:0 auto;padding:0 48px;width:100%;}
 .breadcrumb{display:flex;gap:8px;align-items:center;margin-bottom:24px;}
@@ -214,6 +214,12 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
 .fade-in.visible{opacity:1;transform:translateY(0);}
 @media(max-width:1100px){.header{padding:0 32px;}nav{display:none;}.section{padding:64px 32px;}.page-hero-inner{padding:0 32px;}.cta-sec{padding:52px 32px;}.steps-layout{grid-template-columns:1fr;gap:40px;}.seasons-grid{grid-template-columns:1fr;}.g-grid{grid-template-columns:1fr 1fr;}.other-grid{grid-template-columns:1fr 1fr;}.faq-layout{grid-template-columns:1fr;gap:40px;}.footer-top{grid-template-columns:1fr 1fr;gap:32px;}.price-cards{grid-template-columns:1fr 1fr;}.cta-sec{flex-direction:column;text-align:center;}.cta-r{flex-direction:column;align-items:center;}}
 @media(max-width:640px){.header{padding:0 20px;}.section{padding:52px 20px;}.page-hero-inner{padding:0 20px;}.cta-sec{padding:44px 20px;}footer{padding:32px 20px;}.price-cards{grid-template-columns:1fr;}.g-grid{grid-template-columns:1fr;}.other-grid{grid-template-columns:1fr;}.footer-top{grid-template-columns:1fr;}.floating{bottom:16px;right:16px;}}
+
+@media(max-width:640px){
+  .page-hero-bg{background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=65')!important;}
+  .header.scrolled{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;}
+  .stat-card,.modal-box{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;}
+}
 </style>
 </head>
 <body>
