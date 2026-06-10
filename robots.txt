@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://climatsochi.ru/sitemap.xml
+Sitemap: https://sochiclimat.pro/sitemap.xml
