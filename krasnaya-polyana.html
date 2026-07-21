@@ -16,7 +16,7 @@
 <!-- /Yandex.Metrika counter -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Кондиционеры для Красной Поляны — монтаж в горах Сочи | ClimatSochi</title>
-<meta name="description" content="Подбор и установка кондиционеров для Красной Поляны. Знаем горный климат: работа при -20°C, зимние комплекты, защита от влаги. ☎ +7 989 097-04-07">
+<meta name="description" content="Подбор и установка кондиционеров для Красной Поляны. Знаем горный климат: работа при -20°C, зимние комплекты, защита от влаги. ☎ 8 900 243-22-22">
 <meta name="keywords" content="кондиционер Красная Поляна, монтаж кондиционера Красная Поляна, сплит система Красная Поляна, кондиционер горы Сочи, кондиционер зимний комплект, кондиционер Эсто-Садок">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://sochiclimat.pro/krasnaya-polyana.html">
@@ -26,7 +26,7 @@
   "@context":"https://schema.org",
   "@type":"Service",
   "name":"Кондиционеры для Красной Поляны",
-  "provider":{"@type":"HVACBusiness","name":"ClimatSochi","telephone":"+7-989-097-04-07","url":"https://sochiclimat.pro","address":{"@type":"PostalAddress","addressLocality":"Сочи","addressRegion":"Краснодарский край","addressCountry":"RU"}},
+  "provider":{"@type":"HVACBusiness","name":"ClimatSochi","telephone":"8 900 243-22-22","url":"https://sochiclimat.pro","address":{"@type":"PostalAddress","addressLocality":"Сочи","addressRegion":"Краснодарский край","addressCountry":"RU"}},
   "areaServed":["Красная Поляна","Эсто-Садок","Роза Хутор","Сочи"],
   "description":"Подбор, продажа и монтаж кондиционеров для горной зоны Сочи. Зимние комплекты, работа при -20°C."
 }
@@ -296,6 +296,15 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
   .header.scrolled{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;}
   .stat-card,.modal-box{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;}
 }
+.dropdown{position:relative;}
+.dropdown-trigger{font-size:11px;color:rgba(255,255,255,0.55);text-transform:uppercase;letter-spacing:2px;cursor:pointer;background:none;border:none;font-family:var(--fb);transition:color 0.2s;}
+.dropdown-trigger:hover{color:var(--gold);}
+.dropdown-menu{position:absolute;top:calc(100% + 16px);left:0;background:var(--dark-2, #1A1612);border:1px solid rgba(201,169,110,0.15);border-radius:12px;padding:10px 0;min-width:240px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:all 0.25s;z-index:100;}
+.dropdown:hover .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
+.dropdown-menu a{display:block;padding:10px 20px;font-size:12px;color:rgba(255,255,255,0.6);transition:all 0.2s;}
+.dropdown-menu a:hover{color:var(--gold);background:rgba(201,169,110,0.06);padding-left:26px;}
+.dropdown-divider{height:1px;background:rgba(201,169,110,0.1);margin:6px 0;}
+.float-max{background:#0077FF;color:#fff;font-size:11px;font-weight:700;letter-spacing:0.5px;text-decoration:none;}
 </style>
 </head>
 <body>
@@ -305,14 +314,29 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
   <div class="header-inner">
     <a href="index.html" class="logo">Climat<span>Sochi</span></a>
     <nav>
-      <a href="index.html#services">Услуги</a>
-      <a href="montazh.html">Монтаж</a>
-      <a href="obsluzhivanie.html">Обслуживание</a>
-      <a href="krasnaya-polyana.html" class="active">Красная Поляна</a>
+      <div class="dropdown">
+        <button class="dropdown-trigger">Услуги ▾</button>
+        <div class="dropdown-menu">
+          <a href="montazh.html">Монтаж кондиционеров</a>
+          <a href="chistka.html">Чистка кондиционеров</a>
+          <a href="antibakterialnaya.html">Антибактериальная чистка</a>
+          <a href="zapravka.html">Заправка фреоном</a>
+          <a href="remont.html">Ремонт кондиционеров</a>
+          <a href="obsluzhivanie.html">Обслуживание</a>
+          <a href="multi-split.html">Мульти-сплит системы</a>
+          <div class="dropdown-divider"></div>
+          <a href="ne-holodіt.html">Кондиционер не холодит</a>
+          <a href="shumіt.html">Шумит кондиционер</a>
+        </div>
+      </div>
+      <a href="adler.html">Адлер</a>
+      <a href="krasnaya-polyana.html">Красная Поляна</a>
+      <a href="zachem-chistit.html">О чистке</a>
+      <a href="dlya-biznesa.html">Для бизнеса</a>
       <a href="index.html#contacts">Контакты</a>
     </nav>
     <div class="header-right">
-      <a href="tel:+79890970407" class="header-phone">+7 989 097-04-07</a>
+      <a href="tel:89002432222" class="header-phone">8 900 243-22-22</a>
       <button class="btn-header" onclick="openModal()">Заявка <span class="btn-arrow">→</span></button>
     </div>
   </div>
@@ -332,7 +356,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
     <p class="page-hero-sub">Обычный кондиционер в горах замерзает и ломается. Мы знаем, какие модели работают при −20°C — и правильно их устанавливаем.</p>
     <div class="page-hero-actions">
       <button class="btn-primary" onclick="openModal()">Подобрать кондиционер</button>
-      <a href="tel:+79890970407" class="btn-ghost">📞 +7 989 097-04-07</a>
+      <a href="tel:89002432222" class="btn-ghost">📞 8 900 243-22-22</a>
     </div>
     <div class="page-hero-tags">
       <span class="tag tag-ice">❄️ Работает при −20°C</span>
@@ -681,7 +705,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
   <div class="cta-text">готовы к горному<br><em>климату?</em></div>
   <div class="cta-right">
     <button class="btn-dark" onclick="openModal()">Заказать подбор бесплатно</button>
-    <a href="tel:+79890970407" class="cta-phone">+7 989 097-04-07</a>
+    <a href="tel:89002432222" class="cta-phone">8 900 243-22-22</a>
   </div>
 </div>
 
@@ -716,10 +740,11 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
       <div>
         <div class="footer-col-title">Контакты</div>
         <div class="footer-links">
-          <a href="tel:+79890970407">+7 989 097-04-07</a>
+          <a href="tel:89002432222">8 900 243-22-22</a>
           <a href="mailto:climatsochi@yandex.ru">climatsochi@yandex.ru</a>
           <a href="#">8:00–22:00 ежедневно</a>
-          <a href="https://wa.me/79890970407" target="_blank">WhatsApp</a>
+            <a href="https://vk.me/id765541763" target="_blank" class="float-btn float-max">MAX</a>
+<a href="https://wa.me/89002432222" target="_blank">WhatsApp</a>
         </div>
       </div>
     </div>
@@ -732,7 +757,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
 
 <!-- ПЛАВАЮЩИЕ КНОПКИ -->
 <div class="floating">
-  <a href="https://wa.me/79890970407" target="_blank" class="float-btn float-wa">💬</a>
+  <a href="https://wa.me/89002432222" target="_blank" class="float-btn float-wa">💬</a>
   <button class="float-btn float-call" onclick="openModal()">📞</button>
 </div>
 

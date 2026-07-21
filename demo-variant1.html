@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Вариант 1 — Тёмное стекло</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:'Arial',sans-serif;
+  min-height:100vh;
+  background:#000;
+}
+
+.bg-fixed{
+  position:fixed;
+  inset:0;
+  background-image:url('img/bg-luxury.jpg');
+  background-size:cover;
+  background-position:center;
+  z-index:0;
+}
+.bg-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.45);
+  z-index:1;
+}
+
+.page{position:relative;z-index:2;padding:60px 48px;min-height:100vh;}
+
+.variant-tag{
+  display:inline-block;
+  background:#c9a96e;
+  color:#000;
+  font-size:11px;
+  font-weight:700;
+  padding:5px 16px;
+  border-radius:20px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:28px;
+}
+
+h1{font-size:58px;font-weight:300;color:#fff;letter-spacing:-2px;line-height:1;margin-bottom:12px;}
+h1 em{color:#c9a96e;font-style:italic;}
+.sub{color:rgba(255,255,255,0.55);font-size:15px;margin-bottom:48px;}
+
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:40px;}
+
+.card{
+  background:rgba(0,0,0,0.45);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  border:1px solid rgba(201,169,110,0.25);
+  border-radius:18px;
+  padding:26px 16px;
+  text-align:center;
+  cursor:pointer;
+  transition:all 0.3s;
+}
+.card:hover{
+  background:rgba(201,169,110,0.15);
+  border-color:rgba(201,169,110,0.6);
+  transform:translateY(-4px);
+}
+.ico{font-size:34px;margin-bottom:10px;}
+.name{color:#fff;font-size:13px;font-weight:600;margin-bottom:4px;}
+.hint{color:rgba(255,255,255,0.4);font-size:11px;}
+
+.bottom{
+  background:rgba(0,0,0,0.5);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border:1px solid rgba(201,169,110,0.2);
+  border-radius:20px;
+  padding:36px 40px;
+}
+.bottom h2{color:#c9a96e;font-size:26px;font-weight:300;margin-bottom:8px;}
+.bottom p{color:rgba(255,255,255,0.5);font-size:14px;}
+</style>
+</head>
+<body>
+
+<div class="bg-fixed"></div>
+<div class="bg-overlay"></div>
+
+<div class="page">
+  <div class="variant-tag">Вариант 1 — тёмное стекло</div>
+  <h1>Для <em>бизнеса</em></h1>
+  <div class="sub">Обслуживание кондиционеров в Сочи — отели, офисы, рестораны</div>
+
+  <div class="grid">
+    <div class="card"><div class="ico">🏨</div><div class="name">Отели</div><div class="hint">санатории</div></div>
+    <div class="card"><div class="ico">🍽️</div><div class="name">Рестораны</div><div class="hint">кафе и бары</div></div>
+    <div class="card"><div class="ico">🏢</div><div class="name">Офисы</div><div class="hint">бизнес-центры</div></div>
+    <div class="card"><div class="ico">🏥</div><div class="name">Больницы</div><div class="hint">медучреждения</div></div>
+    <div class="card"><div class="ico">🎓</div><div class="name">Школы</div><div class="hint">учебные центры</div></div>
+    <div class="card"><div class="ico">💪</div><div class="name">Фитнес</div><div class="hint">спортзалы</div></div>
+    <div class="card"><div class="ico">📦</div><div class="name">Склады</div><div class="hint">производство</div></div>
+    <div class="card"><div class="ico">🚗</div><div class="name">Автосалоны</div><div class="hint">дилеры</div></div>
+  </div>
+
+  <div class="bottom">
+    <h2>Скидка от 15% для бизнеса</h2>
+    <p>Договор на обслуживание — фиксированная цена, приоритетный выезд, гарантия 1 год</p>
+  </div>
+</div>
+
+</body>
+</html>

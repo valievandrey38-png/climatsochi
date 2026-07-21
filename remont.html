@@ -20,7 +20,7 @@
 <!-- /Yandex.Metrika counter -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ремонт кондиционеров в Сочи на дому — от 3 000 ₽ | Climatsochi</title>
-<meta name="description" content="Ремонт кондиционеров любых марок в Сочи. Замена компрессора, платы, мотора. Диагностика бесплатно при ремонте. Гарантия 6 месяцев. ☎ +7 989 097-04-07">
+<meta name="description" content="Ремонт кондиционеров любых марок в Сочи. Замена компрессора, платы, мотора. Диагностика бесплатно при ремонте. Гарантия 6 месяцев. ☎ 8 900 243-22-22">
 <meta name="keywords" content="ремонт кондиционеров Сочи, ремонт кондиционера Сочи, не работает кондиционер Сочи, замена компрессора кондиционера Сочи">
 <link rel="canonical" href="https://sochiclimat.pro/remont.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -189,15 +189,45 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
   .header.scrolled{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;}
   .stat-card,.modal-box{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;}
 }
+.dropdown{position:relative;}
+.dropdown-trigger{font-size:11px;color:rgba(255,255,255,0.55);text-transform:uppercase;letter-spacing:2px;cursor:pointer;background:none;border:none;font-family:var(--fb);transition:color 0.2s;}
+.dropdown-trigger:hover{color:var(--gold);}
+.dropdown-menu{position:absolute;top:calc(100% + 16px);left:0;background:var(--dark-2, #1A1612);border:1px solid rgba(201,169,110,0.15);border-radius:12px;padding:10px 0;min-width:240px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:all 0.25s;z-index:100;}
+.dropdown:hover .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
+.dropdown-menu a{display:block;padding:10px 20px;font-size:12px;color:rgba(255,255,255,0.6);transition:all 0.2s;}
+.dropdown-menu a:hover{color:var(--gold);background:rgba(201,169,110,0.06);padding-left:26px;}
+.dropdown-divider{height:1px;background:rgba(201,169,110,0.1);margin:6px 0;}
+.float-max{background:#0077FF;color:#fff;font-size:11px;font-weight:700;letter-spacing:0.5px;text-decoration:none;}
 </style>
 </head>
 <body>
 <header class="header">
   <div class="header-inner">
     <a href="index.html" class="logo">Climat<span>Sochi</span></a>
-    <nav><a href="montazh.html">Монтаж</a><a href="obsluzhivanie.html">Обслуживание</a><a href="zapravka.html">Заправка</a><a href="index.html#contacts">Контакты</a></nav>
+    <nav>
+      <div class="dropdown">
+        <button class="dropdown-trigger">Услуги ▾</button>
+        <div class="dropdown-menu">
+          <a href="montazh.html">Монтаж кондиционеров</a>
+          <a href="chistka.html">Чистка кондиционеров</a>
+          <a href="antibakterialnaya.html">Антибактериальная чистка</a>
+          <a href="zapravka.html">Заправка фреоном</a>
+          <a href="remont.html">Ремонт кондиционеров</a>
+          <a href="obsluzhivanie.html">Обслуживание</a>
+          <a href="multi-split.html">Мульти-сплит системы</a>
+          <div class="dropdown-divider"></div>
+          <a href="ne-holodіt.html">Кондиционер не холодит</a>
+          <a href="shumіt.html">Шумит кондиционер</a>
+        </div>
+      </div>
+      <a href="adler.html">Адлер</a>
+      <a href="krasnaya-polyana.html">Красная Поляна</a>
+      <a href="zachem-chistit.html">О чистке</a>
+      <a href="dlya-biznesa.html">Для бизнеса</a>
+      <a href="index.html#contacts">Контакты</a>
+    </nav>
     <div class="header-right">
-      <a href="tel:+79890970407" class="header-phone">+7 989 097-04-07</a>
+      <a href="tel:89002432222" class="header-phone">8 900 243-22-22</a>
       <button class="btn-header" onclick="openModal()">Заявка <span class="btn-arrow">→</span></button>
     </div>
   </div>
@@ -212,7 +242,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
     <p class="page-hero-sub">Ремонт любых марок на дому в Сочи. Замена компрессора, платы управления, мотора. Диагностика бесплатно при заказе ремонта.</p>
     <div class="hero-actions">
       <button class="btn-primary" onclick="openModal()">🔧 Вызвать мастера</button>
-      <a href="tel:+79890970407" class="btn-ghost">📞 Позвонить</a>
+      <a href="tel:89002432222" class="btn-ghost">📞 Позвонить</a>
     </div>
     <div class="hero-tags">
       <span class="tag tag-gold">от 3 000 ₽</span>
@@ -233,20 +263,20 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
       <div class="bd-card"><div class="bd-icon">🔩</div><div class="bd-title">Замена компрессора</div><div class="bd-desc">Не запускается, перегревается, стучит. Оригинальные компрессоры с гарантией производителя.</div><div class="bd-price">от 8 000 ₽</div></div>
       <div class="bd-card"><div class="bd-icon">💻</div><div class="bd-title">Ремонт платы управления</div><div class="bd-desc">Не реагирует на пульт, мигают ошибки, самопроизвольно выключается или не включается.</div><div class="bd-price">от 3 500 ₽</div></div>
       <div class="bd-card"><div class="bd-icon">💨</div><div class="bd-title">Замена вентилятора</div><div class="bd-desc">Слабый обдув, шум, вибрация блока. Замена двигателя крыльчатки или вала.</div><div class="bd-price">от 3 000 ₽</div></div>
-      <div class="bd-card"><div class="bd-icon">💧</div><div class="bd-title">Устранение протечки</div><div class="bd-desc">Вода течёт с внутреннего блока. Чистка или замена дренажной системы.</div><div class="bd-price">от 2 500 ₽</div></div>
+      <div class="bd-card"><div class="bd-icon">💧</div><div class="bd-title">Устранение протечки</div><div class="bd-desc">Вода течёт с внутреннего блока. Чистка или замена дренажной системы.</div><div class="bd-price">от 3 000 ₽</div></div>
       <div class="bd-card"><div class="bd-icon">🔌</div><div class="bd-title">Электрические неисправности</div><div class="bd-desc">Не включается, перебои в работе, сгоревшая проводка, предохранители.</div><div class="bd-price">от 2 000 ₽</div></div>
-      <div class="bd-card"><div class="bd-icon">📡</div><div class="bd-title">Ремонт датчиков и клапанов</div><div class="bd-desc">Неточная регулировка температуры, ошибки E1, E2, F1 на дисплее.</div><div class="bd-price">от 2 500 ₽</div></div>
+      <div class="bd-card"><div class="bd-icon">📡</div><div class="bd-title">Ремонт датчиков и клапанов</div><div class="bd-desc">Неточная регулировка температуры, ошибки E1, E2, F1 на дисплее.</div><div class="bd-price">от 3 000 ₽</div></div>
     </div>
     <table class="prices-table fade-in">
       <thead><tr><th>Вид ремонта</th><th>Описание работ</th><th>Стоимость</th></tr></thead>
       <tbody>
         <tr><td><strong>Диагностика</strong></td><td>Полная + заключение. Бесплатно при заказе ремонта</td><td class="td-p">1 500 / 0 ₽</td></tr>
-        <tr><td><strong>Чистка и промывка</strong></td><td>Если причина — загрязнение (часто решает проблему)</td><td class="td-p">от 2 500 ₽</td></tr>
+        <tr><td><strong>Чистка и промывка</strong></td><td>Если причина — загрязнение (часто решает проблему)</td><td class="td-p">от 3 000 ₽</td></tr>
         <tr><td><strong>Замена конденсатора платы</strong></td><td>Вздувшиеся ёмкости на плате управления</td><td class="td-p">от 1 500 ₽</td></tr>
         <tr><td><strong>Ремонт / замена платы управления</strong></td><td>Основная плата или модуль инвертора</td><td class="td-p">от 3 500 ₽</td></tr>
         <tr><td><strong>Замена компрессора</strong></td><td>Оригинальный + работа (без стоимости запчасти)</td><td class="td-p">от 8 000 ₽</td></tr>
         <tr><td><strong>Замена вентилятора / мотора</strong></td><td>Внутреннего или внешнего блока</td><td class="td-p">от 3 000 ₽</td></tr>
-        <tr><td><strong>Устранение протечки</strong></td><td>Чистка дренажа, ремонт или замена поддона</td><td class="td-p">от 2 500 ₽</td></tr>
+        <tr><td><strong>Устранение протечки</strong></td><td>Чистка дренажа, ремонт или замена поддона</td><td class="td-p">от 3 000 ₽</td></tr>
         <tr><td><strong>Замена датчика температуры</strong></td><td>NTC-датчик + программирование</td><td class="td-p">от 1 500 ₽</td></tr>
         <tr><td><strong>Замена 4-ходового клапана</strong></td><td>Не переключается обогрев / охлаждение</td><td class="td-p">от 5 000 ₽</td></tr>
       </tbody>
@@ -315,7 +345,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
       <div class="fade-in">
         <div class="eyebrow"><span class="ey-text">вопросы</span><div class="ey-line"></div></div>
         <h2 class="sec-title" style="font-size:clamp(36px,5vw,60px);">часто<br>спрашивают</h2>
-        <p style="font-size:13px;color:var(--muted);line-height:1.7;">Опишите проблему — мастер приедет с нужными запчастями:<br><a href="tel:+79890970407" style="color:var(--gold-dark);font-weight:600;">+7 989 097-04-07</a></p>
+        <p style="font-size:13px;color:var(--muted);line-height:1.7;">Опишите проблему — мастер приедет с нужными запчастями:<br><a href="tel:89002432222" style="color:var(--gold-dark);font-weight:600;">8 900 243-22-22</a></p>
       </div>
       <div class="faq-list fade-in">
         <div class="faq-item"><div class="faq-q" onclick="faq(this)"><span>Сколько стоит диагностика кондиционера?</span><span class="faq-icon">+</span></div><div class="faq-a">При заказе ремонта — диагностика бесплатно. Если ремонт не требуется или вы решили не делать его — диагностика стоит 1 500 ₽.</div></div>
@@ -331,9 +361,10 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
 <div class="cta-sec">
   <div class="cta-text">кондиционер сломался?<br><em>Приедем сегодня!</em></div>
   <div class="cta-r">
-    <div class="cta-ph">+7 989 097-04-07</div>
+    <div class="cta-ph">8 900 243-22-22</div>
     <button class="btn-dark" onclick="openModal()">🔧 Вызвать мастера →</button>
-    <a href="https://wa.me/79890970407" target="_blank" class="btn-dark" style="background:var(--dark-3);">💬 WhatsApp</a>
+      <a href="https://vk.me/id765541763" target="_blank" class="float-btn float-max">MAX</a>
+<a href="https://wa.me/89002432222" target="_blank" class="btn-dark" style="background:var(--dark-3);">💬 WhatsApp</a>
   </div>
 </div>
 
@@ -343,7 +374,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
     <h2 class="sec-title lt fade-in" style="font-size:clamp(32px,4vw,58px);">другие <em>услуги</em></h2>
     <div class="other-grid">
       <div class="oc fade-in" onclick="location.href='montazh.html'"><div class="oc-ico">🔧</div><div class="oc-title">Монтаж кондиционеров</div><div class="oc-price">от 6 000 ₽</div><div class="oc-link">Подробнее →</div></div>
-      <div class="oc fade-in" onclick="location.href='obsluzhivanie.html'"><div class="oc-ico">🧹</div><div class="oc-title">Чистка и обслуживание</div><div class="oc-price">от 2 500 ₽</div><div class="oc-link">Подробнее →</div></div>
+      <div class="oc fade-in" onclick="location.href='obsluzhivanie.html'"><div class="oc-ico">🧹</div><div class="oc-title">Чистка и обслуживание</div><div class="oc-price">от 3 000 ₽</div><div class="oc-link">Подробнее →</div></div>
       <div class="oc fade-in" onclick="location.href='zapravka.html'"><div class="oc-ico">❄️</div><div class="oc-title">Заправка фреоном</div><div class="oc-price">от 800 ₽</div><div class="oc-link">Подробнее →</div></div>
     </div>
   </div>
@@ -354,13 +385,13 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
     <div><div class="footer-logo">Climat<span>Sochi</span></div><p class="footer-desc">Продажа, монтаж и обслуживание кондиционеров в Сочи. 10 лет в субтропическом климате.</p></div>
     <div><div class="footer-col-title">Услуги</div><div class="footer-links"><a href="montazh.html">Монтаж</a><a href="obsluzhivanie.html">Обслуживание</a><a href="zapravka.html">Заправка</a><a href="remont.html">Ремонт</a></div></div>
     <div><div class="footer-col-title">Районы</div><div class="footer-links"><a href="#">Центр Сочи</a><a href="#">Адлер</a><a href="#">Хоста</a><a href="#">Красная Поляна</a><a href="#">Сириус</a></div></div>
-    <div><div class="footer-col-title">Контакты</div><div class="footer-links"><a href="tel:+79890970407">+7 989 097-04-07</a><a href="#">climatsochi@yandex.ru</a><a href="#">8:00–22:00 ежедневно</a><a href="https://wa.me/79890970407">WhatsApp</a></div></div>
+    <div><div class="footer-col-title">Контакты</div><div class="footer-links"><a href="tel:89002432222">8 900 243-22-22</a><a href="#">climatsochi@yandex.ru</a><a href="#">8:00–22:00 ежедневно</a><a href="https://wa.me/89002432222">WhatsApp</a></div></div>
   </div>
   <div class="footer-bottom"><p class="footer-copy">© 2024 Climatsochi.ru — Ремонт кондиционеров в Сочи</p><p class="footer-copy">ИП Шишов Денис Михайлович</p></div>
 </div></footer>
 
 <div class="floating">
-  <a href="https://wa.me/79890970407" target="_blank" class="float-btn float-wa">💬</a>
+  <a href="https://wa.me/89002432222" target="_blank" class="float-btn float-wa">💬</a>
   <button class="float-btn float-call" onclick="openModal()">📞</button>
 </div>
 

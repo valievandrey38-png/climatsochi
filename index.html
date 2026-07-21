@@ -16,7 +16,7 @@
 <noscript><div><img src="https://mc.yandex.ru/watch/109431317" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 <title>Обслуживание кондиционеров в Сочи: чистка, заправка, ремонт | ClimatSochi</title>
-<meta name="description" content="Чистка, заправка фреоном, сезонное ТО и ремонт кондиционеров в Сочи, Хосте, Мацесте. Выезд за 2 часа, от 2 500 ₽. Гарантия в договоре. ☎ +7 989 097-04-07">
+<meta name="description" content="Чистка, заправка фреоном, сезонное ТО и ремонт кондиционеров в Сочи, Хосте, Мацесте. Выезд за 2 часа, от 3 000 ₽. Гарантия в договоре. ☎ 8 900 243-22-22">
 <meta name="keywords" content="чистка кондиционера Сочи, чистка кондиционера Хоста, чистка кондиционера Мацеста, заправка фреоном Сочи, заправка кондиционера Сочи, заправка фреоном Хоста, сезонное обслуживание кондиционеров Сочи, ТО кондиционера Сочи, ремонт кондиционера Сочи, ремонт кондиционера Хоста, ремонт кондиционера Мацеста, обслуживание кондиционеров Сочи, сплит система Сочи, монтаж кондиционеров Сочи, установка кондиционера Сочи">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Climatsochi">
@@ -38,7 +38,7 @@
   "url":"https://sochiclimat.pro",
   "logo":"https://sochiclimat.pro/favicon.svg",
   "image":"https://sochiclimat.pro/img/og-image.jpg",
-  "telephone":"+7-989-097-04-07",
+  "telephone":"8 900 243-22-22",
   "email":"climatsochi@yandex.ru",
   "description":"Чистка, заправка фреоном, сезонное обслуживание и ремонт кондиционеров в Сочи, Хосте, Мацесте. Монтаж сплит-систем под ключ.",
   "address":{"@type":"PostalAddress","streetAddress":"г. Сочи","addressLocality":"Сочи","addressRegion":"Краснодарский край","addressCountry":"RU","postalCode":"354000"},
@@ -52,9 +52,9 @@
     "@type":"OfferCatalog",
     "name":"Услуги по кондиционированию",
     "itemListElement":[
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Чистка кондиционера в Сочи"},"price":"2500","priceCurrency":"RUB"},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Чистка кондиционера в Сочи"},"price":"3000","priceCurrency":"RUB"},
       {"@type":"Offer","itemOffered":{"@type":"Service","name":"Заправка фреоном в Сочи"},"price":"800","priceCurrency":"RUB"},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Сезонное обслуживание кондиционера"},"price":"2500","priceCurrency":"RUB"},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Сезонное обслуживание кондиционера"},"price":"3000","priceCurrency":"RUB"},
       {"@type":"Offer","itemOffered":{"@type":"Service","name":"Ремонт кондиционеров в Сочи"},"price":"3000","priceCurrency":"RUB"},
       {"@type":"Offer","itemOffered":{"@type":"Service","name":"Монтаж кондиционеров в Сочи"},"price":"6000","priceCurrency":"RUB"}
     ]
@@ -484,6 +484,15 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
   .header.scrolled{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;}
   .stat-card,.modal-box{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;}
 }
+.dropdown{position:relative;}
+.dropdown-trigger{font-size:11px;color:rgba(255,255,255,0.55);text-transform:uppercase;letter-spacing:2px;cursor:pointer;background:none;border:none;font-family:var(--fb);transition:color 0.2s;}
+.dropdown-trigger:hover{color:var(--gold);}
+.dropdown-menu{position:absolute;top:calc(100% + 16px);left:0;background:var(--dark-2, #1A1612);border:1px solid rgba(201,169,110,0.15);border-radius:12px;padding:10px 0;min-width:240px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:all 0.25s;z-index:100;}
+.dropdown:hover .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
+.dropdown-menu a{display:block;padding:10px 20px;font-size:12px;color:rgba(255,255,255,0.6);transition:all 0.2s;}
+.dropdown-menu a:hover{color:var(--gold);background:rgba(201,169,110,0.06);padding-left:26px;}
+.dropdown-divider{height:1px;background:rgba(201,169,110,0.1);margin:6px 0;}
+.float-max{background:#0077FF;color:#fff;font-size:11px;font-weight:700;letter-spacing:0.5px;text-decoration:none;}
 </style>
 </head>
 <body>
@@ -495,16 +504,29 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
   <div class="header-inner">
     <a href="/" class="logo">Climat<span>Sochi</span></a>
     <nav>
-      <a href="#services">Услуги</a>
+      <div class="dropdown">
+        <button class="dropdown-trigger">Услуги ▾</button>
+        <div class="dropdown-menu">
+          <a href="montazh.html">Монтаж кондиционеров</a>
+          <a href="chistka.html">Чистка кондиционеров</a>
+          <a href="antibakterialnaya.html">Антибактериальная чистка</a>
+          <a href="zapravka.html">Заправка фреоном</a>
+          <a href="remont.html">Ремонт кондиционеров</a>
+          <a href="obsluzhivanie.html">Обслуживание</a>
+          <a href="multi-split.html">Мульти-сплит системы</a>
+          <div class="dropdown-divider"></div>
+          <a href="ne-holodіt.html">Кондиционер не холодит</a>
+          <a href="shumіt.html">Шумит кондиционер</a>
+        </div>
+      </div>
       <a href="adler.html">Адлер</a>
       <a href="krasnaya-polyana.html">Красная Поляна</a>
-      <a href="#calc">Калькулятор</a>
-      <a href="#reviews">Отзывы</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contacts">Контакты</a>
+      <a href="zachem-chistit.html">О чистке</a>
+      <a href="dlya-biznesa.html">Для бизнеса</a>
+      <a href="index.html#contacts">Контакты</a>
     </nav>
     <div class="header-right">
-      <a href="tel:+79890970407" class="header-phone">+7 989 097-04-07</a>
+      <a href="tel:89002432222" class="header-phone">8 900 243-22-22</a>
       <button class="btn-header" onclick="openModal()">Заявка <span class="btn-arrow">→</span></button>
       <button class="burger" id="burger" onclick="toggleBurger()" aria-label="Меню">
         <span></span><span></span><span></span>
@@ -520,6 +542,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
   <a href="#why" onclick="closeBurger()">О нас</a>
   <a href="#reviews" onclick="closeBurger()">Отзывы</a>
   <a href="#faq" onclick="closeBurger()">FAQ</a>
+  <a href="dlya-biznesa.html" onclick="closeBurger()">Для бизнеса</a>
   <a href="#contacts" onclick="closeBurger()">Контакты</a>
 </nav>
 
@@ -541,7 +564,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
       <div class="hero-desc">Продажа, монтаж и обслуживание<br>кондиционеров в Сочи и Адлере.<br>С 2014 года — 1500+ установок.</div>
       <div class="hero-actions">
         <button class="btn-primary" onclick="openQuiz()">Получить расчёт бесплатно</button>
-        <a href="tel:+79890970407" class="btn-ghost">📞 Позвонить</a>
+        <a href="tel:89002432222" class="btn-ghost">📞 Позвонить</a>
       </div>
     </div>
   </div>
@@ -583,7 +606,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
         <div class="s-card-photo">
           <div class="s-card-photo-bg photo-2"></div>
           <div class="s-card-icon">🧹</div>
-          <div class="s-card-price-badge">от 2 500 ₽</div>
+          <div class="s-card-price-badge">от 3 000 ₽</div>
         </div>
         <div class="s-card-body">
           <div class="s-card-title">Чистка и обслуживание</div>
@@ -807,7 +830,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
       <div class="fade-in">
         <div class="eyebrow"><span class="ey-text">частые вопросы</span><div class="ey-line"></div></div>
         <h2 class="section-title" style="font-size:clamp(42px,5vw,72px);">отвечаем<br>на главное</h2>
-        <p style="font-size:13px;color:var(--muted);line-height:1.7;max-width:280px;">Не нашли ответ — звоните:<br><a href="tel:+79890970407" style="color:var(--gold-dark);font-weight:600;">+7 989 097-04-07</a></p>
+        <p style="font-size:13px;color:var(--muted);line-height:1.7;max-width:280px;">Не нашли ответ — звоните:<br><a href="tel:89002432222" style="color:var(--gold-dark);font-weight:600;">8 900 243-22-22</a></p>
       </div>
       <div class="faq-list fade-in">
         <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Сколько стоит установка кондиционера в Сочи?</span><span class="faq-icon">+</span></div><div class="faq-a">Стандартный монтаж — от 6 000 ₽ (трасса до 3 м, вакуумирование, пуско-наладка). Монтаж под ключ с кондиционером 9 BTU — от 27 500 ₽. Мульти-сплит на 2 комнаты — от 25 000 ₽ за работу. Выезд и замер бесплатно.</div></div>
@@ -815,7 +838,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
         <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Работаете в Адлере, Красной Поляне, Сириусе?</span><span class="faq-icon">+</span></div><div class="faq-a">Да, работаем по всему Большому Сочи. Выезд включён в стоимость — без доплат за удалённость района.</div></div>
         <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Как часто нужно чистить кондиционер в Сочи?</span><span class="faq-icon">+</span></div><div class="faq-a">Из-за субтропической влажности — 2 раза в год: весной перед сезоном и осенью после. Фильтры промывайте самостоятельно раз в месяц.</div></div>
         <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Есть ли договор и официальная гарантия?</span><span class="faq-icon">+</span></div><div class="faq-a">Обязательно. Договор с печатью, акт выполненных работ, кассовый чек. Гарантия на монтаж — 3 года, на оборудование — до 5 лет.</div></div>
-        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Сколько стоит заправка фреоном в Сочи?</span><span class="faq-icon">+</span></div><div class="faq-a">R410A — от 800 ₽ за 100 г, R32 — от 1 000 ₽ за 100 г. Средняя полная заправка с диагностикой — 2 500–4 000 ₽. Вакуумируем обязательно перед заправкой.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Сколько стоит заправка фреоном в Сочи?</span><span class="faq-icon">+</span></div><div class="faq-a">R410A — от 800 ₽ за 100 г, R32 — от 1 000 ₽ за 100 г. Средняя полная заправка с диагностикой — 3 000–4 000 ₽. Вакуумируем обязательно перед заправкой.</div></div>
       </div>
     </div>
   </div>
@@ -825,9 +848,10 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
 <div class="cta-banner">
   <div class="cta-text">получи <em>бесплатный расчёт</em><br>прямо сейчас</div>
   <div class="cta-right">
-    <div class="cta-phone-big">+7 989 097-04-07</div>
+    <div class="cta-phone-big">8 900 243-22-22</div>
     <button class="btn-dark" onclick="openModal()">Оставить заявку →</button>
-    <a href="https://wa.me/79890970407" target="_blank" class="btn-dark" style="background:var(--dark-3);">💬 WhatsApp</a>
+      <a href="https://vk.me/id765541763" target="_blank" class="float-btn float-max">MAX</a>
+<a href="https://wa.me/89002432222" target="_blank" class="btn-dark" style="background:var(--dark-3);">💬 WhatsApp</a>
   </div>
 </div>
 
@@ -840,8 +864,8 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
         <h2 class="section-title light" style="font-size:clamp(42px,5vw,72px);">свяжитесь<br><em>с нами</em></h2>
         <p class="contacts-subtitle">Перезвоним в течение 5 минут и рассчитаем стоимость под вашу задачу.</p>
         <div class="contact-row">
-          <div><div class="contact-item-label">Телефон</div><div class="contact-item-value"><a href="tel:+79890970407">+7 989 097-04-07</a></div></div>
-          <div><div class="contact-item-label">WhatsApp</div><div class="contact-item-value"><a href="https://wa.me/79890970407" target="_blank">Написать в WhatsApp →</a></div></div>
+          <div><div class="contact-item-label">Телефон</div><div class="contact-item-value"><a href="tel:89002432222">8 900 243-22-22</a></div></div>
+          <div><div class="contact-item-label">WhatsApp</div><div class="contact-item-value"><a href="https://wa.me/89002432222" target="_blank">Написать в WhatsApp →</a></div></div>
           <div><div class="contact-item-label">Email</div><div class="contact-item-value"><a href="mailto:climatsochi@yandex.ru">climatsochi@yandex.ru</a></div></div>
           <div><div class="contact-item-label">Режим работы</div><div class="contact-item-value">8:00 — 22:00 · ежедневно</div></div>
         </div>
@@ -902,10 +926,10 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
       <div>
         <div class="footer-col-title">Контакты</div>
         <div class="footer-col-links">
-          <a href="tel:+79890970407">+7 989 097-04-07</a>
+          <a href="tel:89002432222">8 900 243-22-22</a>
           <a href="mailto:climatsochi@yandex.ru">climatsochi@yandex.ru</a>
           <a href="#">Режим: 8:00–22:00</a>
-          <a href="https://wa.me/79890970407" target="_blank">WhatsApp</a>
+          <a href="https://wa.me/89002432222" target="_blank">WhatsApp</a>
         </div>
       </div>
     </div>
@@ -918,7 +942,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
 
 <!-- STICKY МОБИЛЬНАЯ ПАНЕЛЬ -->
 <div class="sticky-mobile">
-  <a href="https://wa.me/79890970407" target="_blank" class="sticky-wa">💬 WhatsApp</a>
+  <a href="https://wa.me/89002432222" target="_blank" class="sticky-wa">💬 WhatsApp</a>
   <button class="sticky-call" onclick="openModal()">📞 Заказать</button>
 </div>
 
@@ -1012,7 +1036,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.05);paddin
 
 <!-- ПЛАВАЮЩИЕ КНОПКИ -->
 <div class="floating">
-  <a href="https://wa.me/79890970407" target="_blank" class="float-btn float-wa" title="WhatsApp">💬</a>
+  <a href="https://wa.me/89002432222" target="_blank" class="float-btn float-wa" title="WhatsApp">💬</a>
   <button class="float-btn float-call" onclick="openModal()" title="Заказать звонок">📞</button>
 </div>
 
